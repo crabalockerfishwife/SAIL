@@ -4,4 +4,4 @@ TEAM MEMBERS
 Lauren Kelly
 Isabel Ling
 Sofia Milnikiewicz
-Alexa Paley
+Alexa Paley 
