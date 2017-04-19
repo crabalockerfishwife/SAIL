@@ -18,3 +18,7 @@
 //        echo NULL;
 //    }
 ?>
+    
+    <body>
+Field Trips
+</body>

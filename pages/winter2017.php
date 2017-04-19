@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cornell in Vietnam | Home</title>
+        <title>Cornell in Vietnam | Winter 2017</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
     
@@ -18,3 +18,7 @@
 //        echo NULL;
 //    }
 ?>
+    
+    <body>
+Winter 2017  
+</body>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cornell in Vietnam | Facilities</title>
+        <title>Cornell in Vietnam | ASIAN 3360</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
     
@@ -18,6 +18,7 @@
 //        echo NULL;
 //    }
 ?>
+    
     <body>
-Facilities   
+Asian 3360    
 </body>
