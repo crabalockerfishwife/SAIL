@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cornell in Vietnam | Facilities</title>
+        <title>Cornell in Vietnam | Travel Preparation</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
     
@@ -17,7 +17,9 @@
 //    } else {
 //        echo NULL;
 //    }
+
 ?>
+    
     <body>
-Facilities   
+Travel Prep   
 </body>

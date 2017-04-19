@@ -18,3 +18,7 @@
 //        echo NULL;
 //    }
 ?>
+    
+<body>
+Home    
+</body>
