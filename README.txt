@@ -1,7 +1,7 @@
 INFO 2300 FINAL PROJECT
 
 TEAM MEMBERS
-Lauren Kelly
-Isabel Ling
-Sofia Milnikiewicz
-Alexa Paley 
+Lauren Kelly lsk77
+Isabel Ling igl3
+Sofia Milnikiewicz sam464
+Alexa Paley ap772
