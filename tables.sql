@@ -62,3 +62,10 @@ CREATE TABLE `UserInProgram` (
   `Program_Id` int(11) NOT NULL,
   PRIMARY KEY (`User_Id`,`Program_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Update Blogs table to include a timestamp date for blog posts
+--
+
+ALTER TABLE Blogs
+ADD Date date NOT NULL;
