@@ -11,15 +11,16 @@
         </div>
     </div>
     
-    <a href="../pages/fieldtrips.php">Field Trips</a>
     <a href="../pages/facilities.php">Facilities and Housing</a>
-    <a href="../pages/calendar.php">Sample Calendar</a>
+  
     
     <div class="dropdown">
          <button class="dropbtn">Classes and Faculty</button>
         <div class="dropdown-content">
             <a href="../pages/asian3360.php">ASIAN 3360</a>
             <a href="../pages/faculty.php">Faculty</a>
+            <a href="../pages/fieldtrips.php">Field Trips</a>
+            <a href="../pages/calendar.php">Sample Calendar</a>
         </div>
     </div>
     <a href="../pages/opportunities.php">Other Opportunities</a>
