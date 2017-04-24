@@ -20,5 +20,10 @@
 ?>
     
 <body>
-Home    
+Home 
+<!--
+    <div id="homeimage">
+    <img src="../images/homeimage.jpg" alt="Vietnam Home Image">
+        </div>  home image div
+-->
 </body>
