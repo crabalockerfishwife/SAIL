@@ -1,23 +1,44 @@
 /*** style sheet final ***/
 
+.header {
+    color: white;
+    text-shadow: 2px 2px 4px darkgray;
+    font-family: sans-serif;
+    font-size: 5em;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding-top: 50px;
+    position: relative;
+}
+
+.header-image {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
 .navigation {
     font-family: sans-serif;
     font-size: 1em;
     text-decoration: none;
     text-align: center;
-    margin: 370px;
-    margin-left: -130px;
-    width: 110%;
-    padding: 20px;
+    margin-top: 100px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    left: 0px;
     position: absolute;
     background-color: black;
     opacity: 0.5;
-    
+    z-index: 999;
 }
 
 .navigation a {
     color: white;
-    padding: 30px;
+    padding: 20px;
     text-decoration: none;
 }
 
@@ -86,4 +107,10 @@
 .dropdown:hover .dropbtn {
     color: lightgray;
 
+}
+
+.page-content {
+    margin-top: 35%;
+    position: relative;
+    width: 100%;
 }

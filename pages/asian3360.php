@@ -5,20 +5,21 @@
         <title>Cornell in Vietnam | ASIAN 3360</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
-    
-<?php
-   include("../includes/nav.php");
+<body>
+	<?php
+		include("../includes/header.php");
+   		include("../includes/nav.php");
 
-//    require_once ("../includes/config.php");
-//    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-//    
-//    if($mysqli->connect_error) {
-//        die("Connection failed: " . $mysqli->connect_error);
-//    } else {
-//        echo NULL;
-//    }
-?>
-    
-    <body>
-Asian 3360    
+	//    require_once ("../includes/config.php");
+	//    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+	//    
+	//    if($mysqli->connect_error) {
+	//        die("Connection failed: " . $mysqli->connect_error);
+	//    } else {
+	//        echo NULL;
+	//    }
+	?>
+	<div class="page-content">
+		Asian 3360
+	</div>
 </body>
