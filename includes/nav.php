@@ -26,7 +26,7 @@
     <a href="../pages/opportunities.php">Other Opportunities</a>
 
      <div class="dropdown">
-         <button class="dropbtn">Blog Archive</button>
+         <a href="../pages/bloghome.php"> <button class="dropbtn">Blog Archive</button></a>
         <div class="dropdown-content">
             <a href="../pages/winter2017.php">Winter 2017</a>
         </div>

@@ -2,10 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cornell in Vietnam | Winter 2017</title>
+        <title>Cornell in Vietnam | Sample Calendar</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
-    </head>
-<body>
+    </head><body>
 	<?php
 		include("../includes/header.php");
    		include("../includes/nav.php");
@@ -20,6 +19,6 @@
 	//    }
 	?>
 	<div class="page-content">
-		Winter 2017  
+		Winter 2017 
 	</div>
 </body>
