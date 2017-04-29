@@ -3,7 +3,6 @@
 if (isset($_SESSION['logged_user'])){
     if (isset($_POST['logoutsubmit'])) {     
             unset($_SESSION["logged_user"]);
-            echo"<script> window.location='bloghome.php';</script>";
         } 
 }
 
@@ -21,22 +20,22 @@ if (isset($_SESSION['logged_user'])){
 		include("../includes/header.php");
    		include("../includes/nav.php");
 
-//	    require_once ("../includes/config.php");
-//        $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-//    
-//        if($mysqli->connect_error) {
-//            die("Connection failed: " . $mysqli->connect_error);
-//        } else {
-//            echo NULL;
-//        }
+	    require_once ("../includes/config.php");
+        $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+    
+        if($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+        } else {
+            echo NULL;
+        }
     
 	?>
 	<div class="page-content">
         
 		<div id="loginformwelcome">
         <p>Log In Form</p>  
-            <form action="winter2017.php" method="post">
-                Username:<input type="text" name="username"><br>
+            <form action="bloghome.php" method="post">
+                Username:<input type="text" name="authorname"><br>
                 Password:<input type="password" name="password"><br> 
                 <input type="submit" name="loginsubmit" value="Log In">
             </form>
@@ -47,12 +46,12 @@ if (isset($_SESSION['logged_user'])){
  
 if(isset($_POST['loginsubmit'])) {
         
-        if(!isset($username) && !isset($password)) {
-            if (preg_match('/^[A-Za-z0-9_,. ]*$/', $_POST['username']) && preg_match('/^[A-Za-z0-9_,. ]*$/', $_POST['password'])) {
-            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        if(!isset($authorname) && !isset($password)) {
+            if (preg_match('/^[A-Za-z0-9_,. ]*$/', $_POST['authorname']) && preg_match('/^[A-Za-z0-9_,. ]*$/', $_POST['password'])) {
+            $username = filter_input(INPUT_POST, 'authorname', FILTER_SANITIZE_STRING);
             $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-            $hashpassword = 'administrator1';
-                   
+            $hashpassword = '$2y$10$4MSLoGEop/TRC3TB96Dz5uq/c.jPlx8qqN3KKG/UlGVr963L5fLlG';
+                
             if (password_verify($password, $hashpassword)) {
         
             $sql = "SELECT Author_Name, Hash_Password FROM Users;";  
@@ -65,7 +64,7 @@ if(isset($_POST['loginsubmit'])) {
 
                     if ($hashpassword == $database_password && $username == $database_username) {
                         $_SESSION['logged_user'] = $username;
-                        echo"<script> window.location='bloghome.php';</script>";
+                        echo"<script> window.location='winter2017.php';</script>";
                      }
              
                     elseif ($username != $database_username) {
@@ -83,5 +82,9 @@ if(isset($_POST['loginsubmit'])) {
         }   //!isset    
     }   
 ?>
+    
+    <form action="bloghome.php" method="post">
+    <input type="submit" name="logoutsubmit" value="Log Out">
+    </form>
     
 </body>
