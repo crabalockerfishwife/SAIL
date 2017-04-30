@@ -1,5 +1,21 @@
 /*** style sheet final ***/
 
+.header-bar {
+    background-color: black;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.cornell-logo {
+    height: 40px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
 .header {
     color: white;
     text-shadow: 2px 2px 4px darkgray;
@@ -8,7 +24,7 @@
     text-decoration: none;
     text-align: center;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 60px;
     position: relative;
 }
 
@@ -18,22 +34,31 @@
     top: 0px;
     left: 0px;
     right: 0px;
+    padding-top: 50px;
 }
 
-.navigation {
+.nav-bar {
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    left: 0px;
+    height: 150px;
+    top: 180px;
+}
+
+.nav-bar-content{
     font-family: sans-serif;
     font-size: 1em;
     text-decoration: none;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 0px;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 20px;
     left: 0px;
-    position: absolute;
-    background-color: black;
-    opacity: 0.5;
     z-index: 999;
+    opacity: 1;
 }
 
 .navigation a {
@@ -69,6 +94,10 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    font-family: sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -90,7 +119,9 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:visited {
@@ -107,6 +138,14 @@
 .dropdown:hover .dropbtn {
     color: lightgray;
 
+}
+
+.nav-image {
+    height: 97.92px;
+    width: 130.54px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
 }
 
 .page-content {

@@ -1,5 +1,16 @@
-<div class="navigation">
-    <a href="../pages/index.php">Home</a>
+<div class="nav-bar"></div>
+  <div class="nav-bar-content">
+    <img class="nav-image" src="../images/IMG_7357.jpg" />
+    <img class="nav-image" src="../images/IMG_7347.jpg" />
+    <img class="nav-image" src="../images/DSC_5798.jpg" />
+    <img class="nav-image" src="../images/IMG_7377.jpg" />
+    <img class="nav-image" src="../images/IMG_7268.jpg" />
+    <img class="nav-image" src="../images/IMG_7294.jpg" />
+    <br>
+
+    <div class="dropdown">
+      <a href="../pages/index.php">Home</a>
+    </div>
     
     <div class="dropdown">
          <button class="dropbtn">Admissions and Tuition</button>
@@ -11,7 +22,9 @@
         </div>
     </div>
     
-    <a href="../pages/facilities.php">Facilities and Housing</a>
+    <div class="dropdown">
+      <a href="../pages/facilities.php">Facilities and Housing</a>
+    </div>
   
     
     <div class="dropdown">
@@ -23,7 +36,10 @@
             <a href="../pages/calendar.php">Sample Calendar</a>
         </div>
     </div>
-    <a href="../pages/opportunities.php">Other Opportunities</a>
+
+    <div class="dropdown">
+      <a href="../pages/opportunities.php">Other Opportunities</a>
+    </div>
 
      <div class="dropdown">
          <button class="dropbtn">Blog Archive</button>
