@@ -6,7 +6,7 @@
 		$current_page = basename($_SERVER["SCRIPT_FILENAME"], '.php');
 
 		if ($current_page == "winter2017" || $current_page == "bloghome") {
-			if (empty($_SESSION['user'])){
+			if (empty($_SESSION['logged_user'])){
 				print ("<div id='loginformwelcome'> 
             			<form action='bloghome.php' method='post'>
             				Log In Form<br>
@@ -15,7 +15,7 @@
            	  	  	 		<input type='submit' name='loginsubmit' value='Log In'>
            				</form>
 	  	 			</div>");
-			} else if (isset($_SESSION['user'])) {
+			} else if (isset($_SESSION['logged_user'])) {
 				print ("<form action='bloghome.php' method='post'>
     						<input type='submit' name='logoutsubmit' value='Log Out'>
     					</form>");
