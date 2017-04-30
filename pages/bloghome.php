@@ -12,7 +12,7 @@ if (isset($_SESSION['logged_user'])){
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cornell in Vietnam | Winter 2017</title>
+        <title>Cornell in Vietnam | Blog</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
 <body>
@@ -30,17 +30,6 @@ if (isset($_SESSION['logged_user'])){
         }
     
 	?>
-	<div class="page-content">
-        
-		<div id="loginformwelcome">
-        <p>Log In Form</p>  
-            <form action="bloghome.php" method="post">
-                Username:<input type="text" name="authorname"><br>
-                Password:<input type="password" name="password"><br> 
-                <input type="submit" name="loginsubmit" value="Log In">
-            </form>
-	   </div>
-    </div> <!-- page content div -->
     
 <?php
  
@@ -82,9 +71,21 @@ if(isset($_POST['loginsubmit'])) {
         }   //!isset    
     }   
 ?>
-    
-    <form action="bloghome.php" method="post">
-    <input type="submit" name="logoutsubmit" value="Log Out">
-    </form>
-    
+
+    <div class="page-content">
+        <div class="page-heading">Blog</div>
+        <div class="page-heading-2">A sub-heading</div>
+            <button class="accordion">Expand this</button>
+            <div class="panel">
+                <p>Some content</p>
+            </div>
+            <button class="accordion">Expand this</button>
+            <div class="panel">
+                <p>Some content</p>
+            </div>
+        <div class="page-heading-2">Another sub-heading</div>
+    </div>
+
+    <div class="footer-bar"><br>© SAIL 2017</div>
+    <script type="text/javascript" src="../scripts/script.js"></script> 
 </body>

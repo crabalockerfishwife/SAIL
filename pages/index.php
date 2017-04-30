@@ -20,11 +20,19 @@
 	//    }
 	?>
 	<div class="page-content">
-		Home
+		<div class="page-heading">Home</div>
+		<div class="page-heading-2">A sub-heading</div>
+			<button class="accordion">Expand this</button>
+			<div class="panel">
+  				<p>Some content</p>
+			</div>
+			<button class="accordion">Expand this</button>
+			<div class="panel">
+  				<p>Some content</p>
+			</div>
+		<div class="page-heading-2">Another sub-heading</div>
 	</div>
-	<!--
-    	<div id="homeimage">
-    	<img src="../images/homeimage.jpg" alt="Vietnam Home Image">
-       		 </div>  home image div
-	-->
+
+	<div class="footer-bar"><br>© SAIL 2017</div>
+	<script type="text/javascript" src="../scripts/script.js"></script>
 </body>
