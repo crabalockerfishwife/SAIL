@@ -30,6 +30,25 @@ if (isset($_SESSION['logged_user'])){
 	?>
 
 <?php
+    
+if ($current_page == "winter2017" || $current_page == "bloghome") {
+			if (empty($_SESSION['user'])){
+				print ("<div id='loginformwelcome'> 
+            			<form action='bloghome.php' method='post'>
+            				Log In Form<br>
+            	  	 	 	Username: <input type='text' name='authorname'>
+             	  	 		Password: <input type='password' name='password'>
+           	  	  	 		<input type='submit' name='loginsubmit' value='Log In'>
+                            <input type='submit' name='logoutsubmit' value='Log Out'>
+           				</form>
+	  	 			</div>");
+			} elseif (isset($_SESSION['user'])) {
+				print ("<div id='loginformwelcome'> 
+                        <form action='bloghome.php' method='post'>
+    						<input type='submit' name='logoutsubmit' value='Log Out'>
+    					</form>");
+			}
+		}
  
 if(isset($_POST['loginsubmit'])) {
         
