@@ -1,25 +1,26 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cornell in Vietnam | Winter 2017</title>
+        <title>Cornell in Vietnam | Sample Calendar</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
-    </head>
-<body>
+    </head><body>
 	<?php
 		include("../includes/header.php");
    		include("../includes/nav.php");
 
-	//    require_once ("../includes/config.php");
-	//    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-	//    
-	//    if($mysqli->connect_error) {
-	//        die("Connection failed: " . $mysqli->connect_error);
-	//    } else {
-	//        echo NULL;
-	//    }
+	    require_once ("../includes/config.php");
+	    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+	    
+	    if($mysqli->connect_error) {
+	        die("Connection failed: " . $mysqli->connect_error);
+	    } else {
+	        echo NULL;
+	    }
 	?>
 	<div class="page-content">
-		Winter 2017  
+		Winter 2017 
 	</div>
 </body>
