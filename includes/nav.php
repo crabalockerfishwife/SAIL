@@ -2,7 +2,7 @@
 <div class="nav-bar">
     <ul class="medium-block-grid-6">
 
-      </li>
+      <li>
         <div class="dropdown">
           <a href="../pages/index.php">
             <div><img class="nav-image" src="../images/home-reg.jpg" /></div>
