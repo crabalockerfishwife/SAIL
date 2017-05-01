@@ -5,7 +5,7 @@
       <li>
         <div class="dropdown">
           <a href="../pages/index.php">
-            <div><img class="nav-image" src="../images/home-reg.jpg" /></div>
+            <div><img class="nav-image" src="../images/home-reg.jpg" alt="Nav-Image" /></div>
             <button class="dropbtn">Home</button>
           </a>
         </div>
@@ -13,7 +13,7 @@
     
       <li>
         <div class="dropdown">
-          <div><img class="nav-image" src="../images/tuition-reg.jpg" /></div>
+          <div><img class="nav-image" src="../images/tuition-reg.jpg" alt="Nav-Image" /></div>
           <button class="dropbtn">Admissions and Tuition</button>
             <div class="dropdown-content">
               <a href="../pages/application.php">Application</a>
@@ -27,7 +27,7 @@
       <li>
         <div class="dropdown">
           <a href="../pages/facilities.php">
-            <div><img class="nav-image" src="../images/facilities-reg.jpg" /></div>
+            <div><img class="nav-image" src="../images/facilities-reg.jpg" alt="Nav-Image" /></div>
             <button class="dropbtn">Facilities and Housing</button>
           </a>
         </div>
@@ -35,7 +35,7 @@
   
       <li>
         <div class="dropdown">
-          <div><img class="nav-image" src="../images/faculty-reg.jpg" /></div>
+          <div><img class="nav-image" src="../images/faculty-reg.jpg" alt="Nav-Image" /></div>
           <button class="dropbtn">Classes and Faculty</button>
             <div class="dropdown-content">
               <a href="../pages/asian3360.php">ASIAN 3360</a>
@@ -49,7 +49,7 @@
       <li>
         <div class="dropdown">
           <a href="../pages/opportunities.php">
-            <div><img class="nav-image" src="../images/other-reg.jpg" /></div>
+            <div><img class="nav-image" src="../images/other-reg.jpg" alt="Nav-Image" /></div>
             <button class="dropbtn">Other Opportunities</button>
            </a>
         </div>
@@ -57,7 +57,7 @@
 
       <li>
         <div class="dropdown">
-          <div><img class="nav-image" src="../images/blog-reg.jpg" /></div>
+          <div><img class="nav-image" src="../images/blog-reg.jpg" alt="Nav-Image" /></div>
           <a href="../pages/bloghome.php"> <button class="dropbtn">Blog Archive</button></a>
           <div class="dropdown-content">
             <a href="../pages/winter2017.php">Winter 2017</a>
