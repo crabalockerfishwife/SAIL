@@ -38,9 +38,9 @@
 			|| $current_page == "fieldtrips" || $current_page == "calendar") {
 			print '<img class="header-image" src="../images/faculty-hero.jpg" alt="" />';
 		} else if ($current_page == "opportunities") {
-			print '<img class="header-image" src="../images/other-hero.jpg" alt="" />';
+			print '<img class="header-image" src="../images/ruins-hero.jpg" alt="" />';
 		} else if ($current_page == "winter2017" || $current_page == "bloghome") {
-			print '<img class="header-image" src="../images/blog-hero.jpg" />';
+			print '<img class="header-image" src="../images/colorful_lamps-hero.jpg" />';
 		}
 
 	?>

@@ -49,7 +49,7 @@
       <li>
         <div class="dropdown">
           <a href="../pages/opportunities.php">
-            <div><img class="nav-image" src="../images/other-reg.jpg" alt="Nav-Image" /></div>
+            <div><img class="nav-image" src="../images/ruins.jpg" alt="Nav-Image" /></div>
             <button class="dropbtn">Other Opportunities</button>
            </a>
         </div>
@@ -57,7 +57,7 @@
 
       <li>
         <div class="dropdown">
-          <div><img class="nav-image" src="../images/blog-reg.jpg" alt="Nav-Image" /></div>
+          <div><img class="nav-image" src="../images/colorful_lamps.jpg" alt="Nav-Image" /></div>
           <a href="../pages/bloghome.php"> <button class="dropbtn">Blog Archive</button></a>
           <div class="dropdown-content">
             <a href="../pages/winter2017.php">Winter 2017</a>
