@@ -40,7 +40,7 @@
 		} else if ($current_page == "opportunities") {
 			print '<img class="header-image" src="../images/ruins-hero.jpg" alt="" />';
 		} else if ($current_page == "winter2017" || $current_page == "bloghome") {
-			print '<img class="header-image" src="../images/colorful_lamps-hero.jpg" />';
+			print '<img class="header-image" src="../images/colorful_lamps-hero.jpg" alt="" />';
 		}
 
 	?>
