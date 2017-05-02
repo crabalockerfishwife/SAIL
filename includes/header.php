@@ -28,7 +28,7 @@
 	<?php
 
 		if ($current_page == "index") {
-			print '<img class="header-image" src="../images/watermelons.jpg" alt="" />';
+			print '<img class="header-image" src="../images/home-hero.jpeg" alt="" />';
 		} else if ($current_page == "application" || $current_page == "expenses"
 			|| $current_page == "travelprep" || $current_page == "funding") {
 			print '<img class="header-image" src="../images/tuition-hero.jpg" alt="" />';

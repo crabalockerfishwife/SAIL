@@ -5,7 +5,7 @@
       <li>
         <div class="dropdown">
           <a href="../pages/index.php">
-            <div><img class="nav-image" src="../images/watermelons.jpg" alt="Nav-Image" /></div>
+            <div><img class="nav-image" src="../images/home-reg.jpeg" alt="Nav-Image" /></div>
             <button class="dropbtn">Home</button>
           </a>
         </div>
