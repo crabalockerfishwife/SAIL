@@ -4,9 +4,7 @@
 
       <li>
         <div class="dropdown">
-          <a href="../pages/index.php">
-            <button class="dropbtn">Home</button>
-          </a>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/index.php';">Home</button>
         </div>
       </li>
     
@@ -24,9 +22,7 @@
     
       <li>
         <div class="dropdown">
-          <a href="../pages/facilities.php">
-            <button class="dropbtn">Facilities and Housing</button>
-          </a>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Facilities and Housing</button>
         </div>
       </li>
   
@@ -44,15 +40,13 @@
 
       <li>
         <div class="dropdown">
-          <a href="../pages/opportunities.php">
-            <button class="dropbtn">Other Opportunities</button>
-           </a>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Other Opportunities</button>
         </div>
       </li>
 
       <li>
         <div class="dropdown">
-          <a href="../pages/bloghome.php"> <button class="dropbtn">Blog Archive</button></a>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/bloghome.php';">Blog Archive</button>
           <div class="dropdown-content">
             <a href="../pages/winter2017.php">Winter 2017</a>
           </div>
