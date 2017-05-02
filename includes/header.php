@@ -9,7 +9,7 @@
 			if (empty($_SESSION['logged_user'])){
 				print ("<div id='loginformwelcome'> 
             			<form action='bloghome.php' method='post'>
-            				Log In Form<br>
+                        <br>
             	  	 	 	Username: <input type='text' name='authorname'>
              	  	 		Password: <input type='password' name='password'>
            	  	  	 		<input type='submit' name='loginsubmit' value='Log In'>
@@ -28,7 +28,7 @@
 	<?php
 
 		if ($current_page == "index") {
-			print '<img class="header-image" src="../images/home-hero.jpg" alt="" />';
+			print '<img class="header-image" src="../images/watermelons.jpg" alt="" />';
 		} else if ($current_page == "application" || $current_page == "expenses"
 			|| $current_page == "travelprep" || $current_page == "funding") {
 			print '<img class="header-image" src="../images/tuition-hero.jpg" alt="" />';
@@ -44,5 +44,6 @@
 		}
 
 	?>
+
 
 <div class="header">Cornell in Vietnam</div>

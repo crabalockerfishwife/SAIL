@@ -8,7 +8,7 @@
 <body>
 	<?php
 		include("../includes/header.php");
-   		include("../includes/nav.php");
+   		include("../includes/nav_pages.php");
 
 	//    require_once ("../includes/config.php");
 	//    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
