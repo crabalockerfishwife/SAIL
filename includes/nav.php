@@ -5,7 +5,7 @@
       <li>
         <div class="dropdown">
             <div><img class="nav-image" src="../images/home-reg.jpeg" alt="Nav-Image" /></div>
-            <button class="dropbtn" type="button" onclick="../pages/index.php">Home</button>
+            <button class="dropbtn" type="button" onclick="location.href ='../pages/index.php';">Home</button>
         </div>
       </li>
     
@@ -25,7 +25,7 @@
       <li>
         <div class="dropdown">
             <div><img class="nav-image" src="../images/facilities-reg.jpg" alt="Nav-Image" /></div>
-              <button class="dropbtn" type="button" onclick="../pages/facilities.php">Facilities and Housing</button>
+              <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Facilities and Housing</button>
         </div>
       </li>
   
@@ -45,14 +45,14 @@
       <li>
         <div class="dropdown">
             <div><img class="nav-image" src="../images/ruins.jpg" alt="Nav-Image" /></div>
-             <button class="dropbtn" type="button" onclick="../pages/opportunities.php">Other Opportunities</button>
+             <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Other Opportunities</button>
         </div>
       </li>
 
       <li>
         <div class="dropdown">
           <div><img class="nav-image" src="../images/colorful_lamps.jpg" alt="Nav-Image" /></div>
-           <button class="dropbtn" type="button" onclick="../pages/bloghome.php">Blog Archive</button>
+           <button class="dropbtn" type="button" onclick="location.href ='../pages/bloghome.php';">Blog Archive</button>
           <div class="dropdown-content">
             <a href="../pages/winter2017.php">Winter 2017</a>
           </div>
