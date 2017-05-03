@@ -2,12 +2,14 @@
 <div class="nav-bar">
     <ul class="medium-block-grid-6">
 
+<!--
       <li>
         <div class="dropdown">
             <div><img class="nav-image" src="../images/home-reg.jpeg" alt="Nav-Image" /></div>
             <button class="dropbtn" type="button" onclick="location.href ='../pages/index.php';">Home</button>
         </div>
       </li>
+-->
     
       <li>
         <div class="dropdown">
@@ -37,7 +39,6 @@
               <a href="../pages/asian3360.php">ASIAN 3360</a>
               <a href="../pages/faculty.php">Faculty</a>
               <a href="../pages/fieldtrips.php">Field Trips</a>
-              <a href="../pages/calendar.php">Sample Calendar</a>
             </div>
         </div>
       </li>
@@ -46,6 +47,13 @@
         <div class="dropdown">
             <div><img class="nav-image" src="../images/ruins.jpg" alt="Nav-Image" /></div>
              <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Other Opportunities</button>
+        </div>
+      </li>
+        
+    <li>
+        <div class="dropdown">
+            <div><img class="nav-image" src="../images/calendar-reg.jpg" alt="Nav-Image" /></div>
+             <button class="dropbtn" type="button" onclick="location.href ='../pages/calendar.php';">Sample Calendar</button>
         </div>
       </li>
 
