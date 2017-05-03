@@ -33,7 +33,6 @@
               <a href="../pages/asian3360.php">ASIAN 3360</a>
               <a href="../pages/faculty.php">Faculty</a>
               <a href="../pages/fieldtrips.php">Field Trips</a>
-              <a href="../pages/calendar.php">Sample Calendar</a>
             </div>
         </div>
       </li>
@@ -41,6 +40,12 @@
       <li>
         <div class="dropdown">
           <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Other Opportunities</button>
+        </div>
+      </li>
+        
+    <li>
+        <div class="dropdown">
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/calendar.php';">Sample Calendar</button>
         </div>
       </li>
 
