@@ -1,0 +1,33 @@
+//this code covers the interactivity described in DJ2, actually implemented, not pseudocode 
+    //Dropdowns for items like faculty on the Classes & Faculty Page (it can be hidden to minimize distraction but once
+    //clicked, all information is visible, similar to the dropdowns on https://aap.cornell.edu/academics/rome/admissions-and-tuition)
+    //Using dropdowns will allow information to be hidden/seen dependent on the user’s preferences.
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onhover = function(e) {
+  if (!e.target.matches('.dropdownbutton')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
