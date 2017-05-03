@@ -21,40 +21,46 @@
     
 	?>
 	<div class="page-content">
-		<div class="page-heading">Home</div>
+		<div class="page-heading">Spend three weeks in Vietnam!</div>
 		<div class="page-heading-2">ASIAN 3360
-Community Engagement &amp; Climate Change in the
-Mekong Delta: Insights into Vietnam</div>
-			<button class="accordion">Expand this</button>
+            Community Engagement &amp; Climate Change in the
+            Mekong Delta: Insights into Vietnam</div>
+			<button class="accordion">Application Information</button>
 			<div class="panel">
-  				<p>hi</p>
+  				<p>Early application decision: May 15, 2017</p>
+                <p>Rolling Admission: May 1, 2017 - August 25, 2017</p>
+                <p>Limited to 12 Students</p>
+                <p>Fall 2017 Requirement:  VIET 1100</p>
 			</div>
-			<button class="accordion">Expand this</button>
+			<button class="accordion">Contact Information</button>
 			<div class="panel">
-  				<p>Some content</p>
+  				<p>CornellinVietnam@cornell.edu</p>
 			</div>
-		<div class="page-heading-2">Another sub-heading</div>
         
-        <!-- commented pseudocode for the contact form 
-        HTML FORM:
 
         <div id='contactform'> 
             <form action='index.php' method='post'>
-            Contact Form<br>
-                Name: <input type="text" name="name" value=""> <br>
-                E-mail: <input type="email" name="email" value=""> <br>
-                Phone Number: <input type="tel" name="phone" value=""> <br>
-                Select Your Graduation Year: 
-                <select name="gradyear">
-                <option value="">Select a Year</option>
-                <option value="2020"> 2020 </option>
-                <option value="2019"> 2019 </option>
-                <option value="2018"> 2018 </option>
-                </select> <br>
-                Additional Information: <textarea id="additionalinformation" name="additionalinformation" rows="8" cols="30"></textarea> <br>
-            <input type="submit" name="submit" value="Contact Us"> <br>
+            <div class="page-heading">Contact Form</div>
+                <div id="most-info">
+                    Name: <input type="text" name="name" value=""> <br>
+                    E-mail: <input type="email" name="email" value=""> <br>
+                    Phone Number: <input type="tel" name="phone" value=""> <br>
+                    Select Your Graduation Year: 
+                    <select name="gradyear">
+                    <option value="">Select a Year</option>
+                    <option value="2020"> 2020 </option>
+                    <option value="2019"> 2019 </option>
+                    <option value="2018"> 2018 </option>
+                </select>
+                </div>
+                <div id="add-info">Additional Information:<br>
+                    <textarea id="additionalinformation" name="additionalinformation" rows="3" cols="50"></textarea><br>
+                    <input type="submit" name="submit" value="Contact Us"><br>
+                </div>
            	</form>
         </div>
+
+        <?php
 
         if (isset($_POST['submit'])) { #to check if the user submitted
                 
@@ -71,8 +77,9 @@ Mekong Delta: Insights into Vietnam</div>
                 $phone\r\nAdditional Information: $additionalinformation";
 
         }
+
+        ?>
         
-        This is an example e-mail !-->
 	</div>
 
 	<div class="footer-bar"><br>© SAIL 2017</div>

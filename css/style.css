@@ -281,3 +281,14 @@ div.panel {
     font-weight: 800;
     padding-top: 500px;
 }
+
+#most-info {
+    display: inline-block;   
+    margin-left: 60px; 
+    text-align: left;
+}
+
+#add-info {
+    display: inline-block;
+    text-align: right;
+}
