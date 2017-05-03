@@ -28,17 +28,19 @@
 	<?php
 
 		if ($current_page == "index") {
-			print '<img class="header-image" src="../images/home-hero.jpg" alt="" />';
+			print '<img class="header-image" src="../images/home-reg.jpeg" alt="" />';
 		} else if ($current_page == "application" || $current_page == "expenses"
 			|| $current_page == "travelprep" || $current_page == "funding") {
 			print '<img class="header-image" src="../images/tuition-hero.jpg" alt="" />';
 		} else if ($current_page == "facilities") {
 			print '<img class="header-image" src="../images/facilities-hero.jpg" alt="" />';
 		} else if ($current_page == "asian3360" || $current_page == "faculty"
-			|| $current_page == "fieldtrips" || $current_page == "calendar") {
+			|| $current_page == "fieldtrips") {
 			print '<img class="header-image" src="../images/faculty-hero.jpg" alt="" />';
 		} else if ($current_page == "opportunities") {
 			print '<img class="header-image" src="../images/ruins-hero.jpg" alt="" />';
+        } else if ($current_page == "calendar") {
+			print '<img class="header-image" src="../images/calendar-hero.jpg" alt="" />';
 		} else if ($current_page == "winter2017" || $current_page == "bloghome") {
 			print '<img class="header-image" src="../images/colorful_lamps-hero.jpg" alt="" />';
 		}
