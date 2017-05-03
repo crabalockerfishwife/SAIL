@@ -22,10 +22,12 @@
 	?>
 	<div class="page-content">
 		<div class="page-heading">Home</div>
-		<div class="page-heading-2">A sub-heading</div>
+		<div class="page-heading-2">ASIAN 3360
+Community Engagement &amp; Climate Change in the
+Mekong Delta: Insights into Vietnam</div>
 			<button class="accordion">Expand this</button>
 			<div class="panel">
-  				<p>Some content</p>
+  				<p>hi</p>
 			</div>
 			<button class="accordion">Expand this</button>
 			<div class="panel">
