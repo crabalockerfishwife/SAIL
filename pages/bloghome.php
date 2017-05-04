@@ -15,7 +15,8 @@ if (isset($_SESSION['logged_user'])){
         <title>Cornell in Vietnam | Blog</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
-<body>
+
+
 	<?php
 		include("../includes/header.php");
    		include("../includes/nav_pages.php");
@@ -53,7 +54,7 @@ if(isset($_POST['loginsubmit'])) {
 
                     if ($hashpassword == $database_password && $username == $database_username) {
                         $_SESSION['logged_user'] = $username;
-                        echo"<script> window.location='winter2017.php';</script>";
+                        echo"<script> window.location='bloghome.php';</script>";
                      }
              
                     elseif ($username != $database_username) {
@@ -71,136 +72,255 @@ if(isset($_POST['loginsubmit'])) {
         }   //!isset    
     }   
 ?>
-
+<body>
     <div class="page-content">
         <div class="page-heading">Blog</div>
-        <div class="page-heading-2">A sub-heading</div>
-            <button class="accordion">Expand this</button>
-            <div class="panel">
-                <p>Some content</p>
+            <p>Through the course of a year, students engage in 5 credits of academic learning. Starting from VIET 1110 in the Fall and concluding with ASIAN 3360 in the Spring, students receive amble opportunity to learn and experience Vietnam both in the classroom and in the country itself. <br> These blogs represent the students work before, during, and after their stay in Vietnam.</p>
+            <a href="../pages/winter2017.php">Winter 2017: Climate Change and Service Learning in the Mekong Delta, Vietnam</a>
+              
+
   <?php       
-//    if (isset($_SESSION['logged_user'])){      
+    if (isset($_SESSION['logged_user'])){      
    ?>             
-                <!-- content to reveal when user is logged in - pseudocode for adding a blog
-        
-    HTML FORM:
-                    div id="addblog">
-                    <form method="post" action="bloghome.php" enctype="multipart/form-data">
-                    <label>Title</label><input type="text" name="title" required/>
-                    <input type="file" name="new_upload_image">Image
-                    <label>Add to</label><input type="checkbox" name="addtoprogram"/>
-                    <label>Program</label><select name="programname">
-
-                        <?php
-        //                    $array="SELECT Program_Id, Program_Name from Programs";
-        //                    $result = $mysqli->query($array);
-        //                    
-        //                            while($row = $result->fetch_assoc()) {
-        //                                $program_id=$row['Program_Id'];
-        //                                $program_name = $row['Program_Name'];
-        //                                echo "<option value=\"$program_id\" label=\" $program_name\">$program_name</option>";
-        //                            }
-                        ?>
-                    </select>
-
-                    <label>Author</label><select name="authorname">
-
-                        <?php
-        //                    $array="SELECT User_Id, Author_Name from Users";
-        //                    $result = $mysqli->query($array);
-        //                    
-        //                            while($row = $result->fetch_assoc()) {
-        //                                $user_id=$row['User_Id'];
-        //                                $author_name = $row['Author_Name'];
-        //                                echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
-        //                            }
-                        ?>
-                    </select>
-                    <input type="submit" name="addblog" value="Add Blog">
-                </form>
-
-
-                !-->
+       <div>
+            <button class="accordion">Add a Blog</button>
+            <div class="panel">
                 
+    <div id="addblog">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            <label>Title</label><input type="text" name="title" required/>
+            <label>Content</label><input type="text" name="content" required/>
+            <input type="file" name="new_upload_image">
+            <label>Program</label><select name="programname">
+
+                <?php
+                    $array="SELECT Program_Id, Program_Date from Programs";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $program_id=$row['Program_Id'];
+                            $program_name = $row['Program_Date'];
+                            echo "<option value=\"$program_id\" label=\" $program_name\">$program_name</option>";
+                        }
+                ?>
+            </select>
+            
+            <label>Author</label><select name="authorname">
+
+                <?php
+                    $array="SELECT User_Id, Author_Name from Users";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $user_id=$row['User_Id'];
+                            $author_name = $row['Author_Name'];
+                            echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
+                        }
+                ?>
+            </select>
+            
+            <input type="submit" name="addblog" value="Add Blog">
+        </form>
+            </div> <!-- addblog div -->
                 
+         </div> <!-- panel -->
+    </div> <!-- accordion--> 
+
 <?php
-//                CONNECTING TO DATABASE, ADDING THE BLOG!
+    
+    
+        if (isset($_POST['addblog'])){
+            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['title']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['content']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['programname']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['authorname']))))) {
+                $file = $_FILES['new_upload_image'];
+                $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+                $content = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+                $program_id= filter_input(INPUT_POST, 'programname');
+                $user_id= filter_input(INPUT_POST, 'authorname');
                 
-//        print("<div class='errorprinting'>");
-//        if (isset($_POST['addblog'])){
-//            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['caption']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['albumname']))) {
-//                $newimage = $_FILES['new_upload_image'];
-//                $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-//                $program_id= filter_input(INPUT_POST, 'program_name');
-//                $user_id= filter_input(INPUT_POST, 'author_name');
-//                
-//       if(!empty($_FILES['new_upload_image'])) {
-//            $originalname=$newfile['name'];
-//            
-//            if($newfile['error']==0) { //0 = no error
-//                $temporaryname=$newfile['tmp_name'];
-//                move_uploaded_file($temporaryname,"../images/$originalname");
-//                $_SESSION['new_upload_image'][] = $originalname;
-//                print("$originalname was uploaded successfully");
-//            
-//            } elseif (file_exists("../images/$originalname")){
-//                $i=1;
-//                $ext=pathinfo("../images/$originalname", PATHINFO_EXTENSION);
-//                $originalname=pathinfo("../images/$originalname", PATHINFO_FILENAME);
-//                $new_originalname=$originalname . $i . '.' . $ext;
-//                $newpath = "../images/" . $new_originalname;
-//                $i++;
-//                move_uploaded_file($temporaryname, $newpath);
-//                print("$new_originalname was uploaded successfully");
-//            
-//            } else {
-//                print("Error in uploading $originalname");
-//                print "<img src='$newfile' alt='Image' title=''><br />\n";
-//                } 
-//        
-//            $addblog_query="INSERT INTO Blogs (Blog_Id, Title, Image_File_Path, Content, Date) VALUES (NULL, '$title', '../images/$originalname', NULL)";
-//            if(!isset($_GET['Blog_Id'])){
-//            $result = $mysqli->query($addblog_query);
-//                if($result == FALSE) {
-//                    echo("Error in adding blog to database.");
-//                }   
-//            }
-//        
-//            $blog_grab="SELECT Blog_Id FROM Blogs ORDER BY Blog_Id desc LIMIT 1";
-//            $query = $mysqli->query($blog_grab);
-//                 while($result = $query->fetch_assoc()) {
-//                     $blog_id=$result['Bhoto_Id'];
-//                 }
-//            
-//           if(isset($_POST['addtoprogram'])) {
-//            $myquery="INSERT INTO BlogInProgram (Blog_Id, Program_Id) VALUES (NULL, '$program_id',);";
-////                echo($myquery);
-//                if(!isset($_GET['program_id'])){
-//                    $result = $mysqli->query($myquery);
+       
+        if (!empty($_POST['content'])) {      
+            if(!empty($_FILES['new_upload_image'])) {
+                $originalname=$file['name'];
+
+                if($file['error']==0) { //0 = no error
+                    $temporaryname=$file['tmp_name'];
+                    move_uploaded_file($temporaryname,"../images/$originalname");
+                    $_SESSION['new_upload_image'][] = $originalname;
+                    print("$originalname was uploaded successfully");
+                }
+                   
+            } if (empty($_FILES['new_upload_image'])) {
+                    echo ("No image selected");
+            }
+            
+            $addblog_query="INSERT INTO Blogs (Blog_Id, Title, Image_File_Path, Content, Date) VALUES (NULL, '$title', '../images/$originalname', '$content', NULL)";
+            if(!isset($_GET['Blog_Id'])){
+            $result = $mysqli->query($addblog_query);
+                if($result == FALSE) {
+                    echo("Error in adding blog to database.");
+                }   
+            }
+
+            $blog_grab="SELECT Blog_Id FROM Blogs ORDER BY Blog_Id desc LIMIT 1";
+            $query = $mysqli->query($blog_grab);
+                while($result = $query->fetch_assoc()) {
+                    $blog_id=$result['Blog_Id'];
+                
+
+            $myquery="INSERT INTO BlogInProgram (Blog_Id, Program_Id) VALUES ('$blog_id', '$program_id');";
+                if(!isset($_GET['programname'])){
+                    $result = $mysqli->query($myquery);
+                        if($result == FALSE) {
+                        echo("Error in inserting into Blog in Program.");
+                        }   
+                }
+            
+//            $programname_grab="SELECT Program_Name, Program_Date FROM Programs WHERE Program_Id='$program_id'";
+//            $query = $mysqli->query($programname_grab);
+//                while($result = $query->fetch_assoc()) {
+//                    $program_name=$result['Program_Name'];
+//                    $program_date=$result['Program_Date'];
+             
+            
+//            $program_query="INSERT INTO Programs (Program_Id, Program_Name, Program_Date) VALUES ('$program_id', '$program_name', '$program_date');";
+//                if(!isset($_GET['programname'])){
+//                    $result = $mysqli->query($program_query);
 //                        if($result == FALSE) {
 //                        echo("Error in inserting into Program.");
 //                        }   
 //                }
 //            }
-//        }
-//        
-//        } else {
-//                echo "Bad input";
-//            }
-//        }
-//            print("</div>"); //errorprinting div
+            
+            $user_blog="INSERT INTO UserInBlog (User_Id, Blog_Id) VALUES ('$user_id', '$blog_id');";
+                if(!isset($_GET['authorname'])){
+                    $result = $mysqli->query($user_blog);
+                        if($result == FALSE) {
+                        echo("Error in inserting into User in Blog.");
+                        }   
+                }
+            
+//            $user_program="INSERT INTO UserInProgram (User_Id, Program_Id) VALUES ('$user_id', '$program_id');";
+//                if(!isset($_GET['authorname'])){
+//                    $result = $mysqli->query($user_program);
+//                        if($result == FALSE) {
+//                        echo("Error in inserting into User in Program.");
+//                        }   
+            
+            }
+            
+        } else { //if there is content 
+            echo "No content was added.";
+        }
+                
+        } else {//pregmatch
+                echo "Bad input.";
+        }
+        
+        } //add blog is pushed
+
         
 ?>
-            </div>
-            <button class="accordion">Expand this</button>
-            <div class="panel">
-                <p>Some content</p>
-            </div>
-        <div class="page-heading-2">Another sub-heading</div>
-    </div>
+    <div>
+    <button class="accordion">Delete a Blog</button>
+        <div class="panel">
+  		    <div id="deleteblog">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            <label>Blog Title</label><select name="blogtitle">
 
+                <?php
+                    $array="SELECT Blog_Id, Title from Blogs";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $blog_id=$row['Blog_Id'];
+                            $title = $row['Title'];
+                            echo "<option value=\"$blog_id\" label=\" $title\">$title</option>";
+                        }
+                ?>
+            </select>
+            
+
+            <input type="submit" name="deleteblog" value="Delete Blog">
+        </form>
+            </div> <!-- deleteblog div -->
+                
+         </div> <!-- panel -->
+    </div> <!-- accordion--> 
+ 
+<?php
+        if (isset($_POST['deleteblog'])){
+            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['blogtitle'])) {
+                $blog_id= filter_input(INPUT_POST, 'blogtitle');
+    
+            $deleteblog="DELETE FROM Blogs WHERE Blog_Id='$blog_id'"; 
+            $result=$mysqli->query($deleteblog);
+                if($result == FALSE) {
+                    echo("Error in deleting from database.");
+                } 
+            }
+            
+            $deleteblog_inprogram="DELETE FROM BlogInProgram WHERE Blog_Id='$blog_id'"; 
+            $result=$mysqli->query($deleteblog_inprogram);
+                if($result == FALSE) {
+                    echo("Error in deleting from database.");
+                } 
+            
+            $deleteuser_inblog="DELETE FROM UserInBlog WHERE Blog_Id='$blog_id'"; 
+            $result=$mysqli->query($deleteuser_inblog);
+                if($result == FALSE) {
+                    echo("Error in deleting from database.");
+                } 
+            
+            
+        } //delete blog end
+?> 
+    
+<div>
+    <button class="accordion">Add a Program</button>
+        <div class="panel">
+  		    <div id="addprogram">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            <label>Progam Name</label><input type="text" name="programname" required/>
+            <label>Program Date</label><input type="text" name="programdate" required/>
+            <input type="submit" name="addprogram" value="Add Program">
+        </form>
+            </div> <!-- add program div -->
+                
+         </div>  <!-- panel  -->
+    </div> <!-- accordion--> 
+ 
+    </div>  <!-- page content -->
+    
+<?php
+        if (isset($_POST['addprogram'])){
+            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['programname']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['programdate']))) {
+                $programname= filter_input(INPUT_POST, 'programname');
+                $programdate= filter_input(INPUT_POST, 'programdate');
+    
+                $addprogram="INSERT INTO Programs (Program_Id, Program_Name, Program_Date) VALUES (NULL, '$programname' , '$programdate')";
+                $result = $mysqli->query($addprogram);
+                print_r($result);
+                    if($result == FALSE) {
+                        echo("Error in inserting into User in Blog.");
+                    }   
+
+            }
+        } //end add program
+
+?> 
+   
+    
+
+    
+<?php    //this is to only show this information if you are logged in 
+}
+?>
+    
+    
     <div class="footer-bar"><br>© SAIL 2017</div>
     <script type="text/javascript" src="../scripts/script.js"></script> 
+    
 </body>
     
+</html>  
     
