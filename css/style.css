@@ -215,6 +215,7 @@ button {
     margin-left: 20px;
 }
 
+
 button.accordion {
     font-family: sans-serif;
     text-decoration: none;
@@ -260,6 +261,8 @@ div.panel {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+
+
 
 .footer-bar {
     background-color: black;
