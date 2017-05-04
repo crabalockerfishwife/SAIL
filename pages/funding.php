@@ -29,13 +29,13 @@
 			</div>
 			<button class="accordion">Off-Campus Opportunity Fund</button>
 			<div class="panel">
-  				<p>The <a href="http://www.cuabroad.cornell.edu/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=10422">Off-Campus Opportunities Fund (OCOF)</a> is a commpn application for students seeking financial support for off-campus experiences.</p>
+  				<p>The <a href="http://www.cuabroad.cornell.edu/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=10422">Off-Campus Opportunities Fund (OCOF)</a> is a common application for students seeking financial support for off-campus experiences.</p>
 			</div>
 			<button class="accordion">Off-Campus Opportunity Fund</button>
 			<div class="panel">
   				<p>The <a href="http://www.cuabroad.cornell.edu/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=10422">Off-Campus Opportunities Fund (OCOF)</a> is a common application for students seeking financial support for off-campus experiences.</p>
 			</div>
-			</div>
+			
 			<button class="accordion">Engaged Cornell</button>
 			<div class="panel">
   				<p><a href="http://engaged.cornell.edu/funding/">Engaged Cornell</a> supports the creation of new community-engaged courses, research, and internship opportunities, as well as the further development and curricular integration of current community-engaged teaching and research initiatives through several grant programs. This course has a service-learning component, please make sure to check with them about their grant programs.</p>
@@ -50,7 +50,8 @@
 			</div>
 		<div class="page-heading-2">Outside Funding Opportunities</div>
 	</div>
+    </body>
 
+    
 	<div class="footer-bar"><br>© SAIL 2017</div>
 	<script type="text/javascript" src="../scripts/script.js"></script>
-</body>
