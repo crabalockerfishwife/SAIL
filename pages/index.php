@@ -21,7 +21,7 @@
     
 	?>
 	<div class="page-content">
-		<div class="page-heading">Spend three weeks in Vietnam!</div>
+		<div class="page-heading">Spend three weeks in Vietnam!</div><br>
 		<div class="page-heading-2">ASIAN 3360
             Community Engagement &amp; Climate Change in the
             Mekong Delta: Insights into Vietnam</div>
@@ -37,10 +37,10 @@
   				<p>CornellinVietnam@cornell.edu</p>
 			</div>
         
-
+        <br>
         <div id='contactform'> 
             <form action='index.php' method='post'>
-            <div class="page-heading">Contact Form</div>
+            <div class="page-heading">Contact Form</div><br>
                 <div id="most-info">
                     Name: <input type="text" name="name" value=""> <br>
                     E-mail: <input type="email" name="email" value=""> <br>
