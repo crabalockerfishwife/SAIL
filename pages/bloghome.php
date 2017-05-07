@@ -37,7 +37,7 @@ if (isset($_SESSION['logged_user'])){
 if(isset($_POST['loginsubmit'])) {
         
         if(!isset($authorname) && !isset($password)) {
-            if (preg_match('/^[A-Za-z0-9_,. ]*$/', $_POST['authorname']) && preg_match('/^[A-Za-z0-9_,. ]*$/', $_POST['password'])) {
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname']) && preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['password'])) {
             $username = filter_input(INPUT_POST, 'authorname', FILTER_SANITIZE_STRING);
             $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
             $hashpassword = '$2y$10$4MSLoGEop/TRC3TB96Dz5uq/c.jPlx8qqN3KKG/UlGVr963L5fLlG';
@@ -94,12 +94,12 @@ if(isset($_POST['loginsubmit'])) {
             <label>Program</label><select name="programname">
 
                 <?php
-                    $array="SELECT Program_Id, Program_Date from Programs";
+                    $array="SELECT Program_Id, Program_Name from Programs";
                     $result = $mysqli->query($array);
                             
                         while($row = $result->fetch_assoc()) {
                             $program_id=$row['Program_Id'];
-                            $program_name = $row['Program_Date'];
+                            $program_name = $row['Program_Name'];
                             echo "<option value=\"$program_id\" label=\" $program_name\">$program_name</option>";
                         }
                 ?>
@@ -130,10 +130,10 @@ if(isset($_POST['loginsubmit'])) {
     
     
         if (isset($_POST['addblog'])){
-            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['title']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['content']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['programname']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['authorname']))))) {
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['title']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['content']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname']))))) {
                 $file = $_FILES['new_upload_image'];
                 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
-                $content = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+                $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
                 $program_id= filter_input(INPUT_POST, 'programname');
                 $user_id= filter_input(INPUT_POST, 'authorname');
                 
@@ -249,7 +249,7 @@ if(isset($_POST['loginsubmit'])) {
  
 <?php
         if (isset($_POST['deleteblog'])){
-            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['blogtitle'])) {
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['blogtitle'])) {
                 $blog_id= filter_input(INPUT_POST, 'blogtitle');
     
             $deleteblog="DELETE FROM Blogs WHERE Blog_Id='$blog_id'"; 
@@ -289,11 +289,10 @@ if(isset($_POST['loginsubmit'])) {
          </div>  <!-- panel  -->
     </div> <!-- accordion--> 
  
-    </div>  <!-- page content -->
     
 <?php
         if (isset($_POST['addprogram'])){
-            if (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['programname']) && (preg_match('/^[A-Za-z0-9_, ]*$/', $_POST['programdate']))) {
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programdate']))) {
                 $programname= filter_input(INPUT_POST, 'programname');
                 $programdate= filter_input(INPUT_POST, 'programdate');
     
@@ -308,10 +307,233 @@ if(isset($_POST['loginsubmit'])) {
         } //end add program
 
 ?> 
-   
+        
+<div>
+            <button class="accordion">Edit a Blog</button>
+            <div class="panel">
+                
+    <div id="addblog">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            
+            <label>Blog Title</label><select name="oldtitle">
+
+                <?php
+                    $array="SELECT Blog_Id, Title from Blogs ORDER BY Blog_Id ASC";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $blog_id=$row['Blog_Id'];
+                            $title = $row['Title'];
+                            echo "<option value=\"$blog_id\" label=\" $title\">$title</option>";
+                        }
+                ?>
+            </select>
+            <label>New Title</label><input type="newtext" name="newtitle"/>
+            <label>Content</label><input type="text" name="content"/>
+            <label>Program</label><select name="programname">
+
+                <?php
+                    $array="SELECT Program_Id, Program_Name from Programs ORDER BY Program_Id asc";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $program_id=$row['Program_Id'];
+                            $program_name = $row['Program_Name'];
+                            echo "<option value=\"$program_id\" label=\" $program_name\">$program_name</option>";
+                        }
+                ?>
+            </select>
+            
+            <label>Author</label><select name="authorname">
+
+                <?php
+                    $array="SELECT User_Id, Author_Name from Users ORDER BY User_Id ASC";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $user_id=$row['User_Id'];
+                            $author_name = $row['Author_Name'];
+                            echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
+                        }
+                ?>
+            </select>
+            
+            <input type="submit" name="editblog" value="Edit Blog">
+        </form>
+            </div> <!-- addblog div -->
+                
+         </div> <!-- panel -->
+    </div> <!-- accordion--> 
+
+<?php
+
+        if (isset($_POST['editblog'])){
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['oldtitle']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newtitle']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['content']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname'])))))) {
+                $blog_id= filter_input(INPUT_POST, 'oldtitle');
+                $newtitle = filter_input(INPUT_POST, 'newtitle', FILTER_SANITIZE_STRING);
+                $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+                $program_id= filter_input(INPUT_POST, 'programname');
+                $user_id= filter_input(INPUT_POST, 'authorname');
+        
+        if (($blog_id != 1) && (!empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id == 1) && ($user_id == 1)) {
+            
+            $edittitle="UPDATE Blogs SET Title='$newtitle' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                $result = $mysqli->query($edittitle);
+                    if($result == FALSE) {
+                        echo("Error in changing title name in database.");
+                    }   
+                } //works
+            
+        } elseif (($blog_id != 1) && (!empty($_POST['newtitle'])) && (!empty($_POST['content'])) && ($program_id == 1) && ($user_id == 1)) {
+            
+            $edittitle_and_content="UPDATE Blogs SET Title='$newtitle', Content='$content' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                $result = $mysqli->query($edittitle_and_content);
+                    if($result == FALSE) {
+                        echo("Error in changing title name and content in database.");
+                    }   
+                } // works
+            
+        } elseif (($blog_id != 1) && (!empty($_POST['newtitle'])) && (!empty($_POST['content'])) && ($program_id != 1) && ($user_id == 1)) {
+            
+            $edittitle_and_content="UPDATE Blogs SET Title='$newtitle', Content='$content' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                $result = $mysqli->query($edittitle_and_content);
+                    if($result == FALSE) {
+                        echo("Error in changing title name and content in database.");
+                    }   
+                } //works
+            
+             $bloginprogram="UPDATE BlogInProgram SET Program_Id='$program_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($bloginprogram);
+                        if($result == FALSE) {
+                        echo("Error in changing the program of your blog.");
+                        }   
+                } //works
+            
+        } elseif (($blog_id != 1) && (empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id != 1) && ($user_id == 1)) {
+            
+             $bloginprogram="UPDATE BlogInProgram SET Program_Id='$program_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($bloginprogram);
+                        if($result == FALSE) {
+                        echo("Error in changing the program of your blog.");
+                        }   
+                } //works
+
+        } elseif (($blog_id != 1) && (empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id == 1) && ($user_id != 1)) {
+              
+            $edit_userinblog="UPDATE UserInBlog SET User_Id='$user_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($edit_userinblog);
+                        if($result == FALSE) {
+                        echo("Error in editing username associated with that Blog.");
+                        }   
+                } //works
+                
+        } elseif (($blog_id != 1) && (!empty($_POST['newtitle'])) && (!empty($_POST['content'])) && ($program_id != 1) && ($user_id != 1)) {
+            
+            $edittitle_and_content="UPDATE Blogs SET Title='$newtitle', Content='$content' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                $result = $mysqli->query($edittitle_and_content);
+                    if($result == FALSE) {
+                        echo("Error in changing title name and content in database.");
+                    }   
+                } //works
+            
+             $bloginprogram="UPDATE BlogInProgram SET Program_Id='$program_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($bloginprogram);
+                        if($result == FALSE) {
+                        echo("Error in changing the program of your blog.");
+                        }   
+                } //works
+            
+            $edit_userinblog="UPDATE UserInBlog SET User_Id='$user_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($edit_userinblog);
+                        if($result == FALSE) {
+                        echo("Error in editing username associated with that Blog.");
+                        }   
+                } //works
+        
+        } elseif (($blog_id != 1) && (!empty($_POST['newtitle'])) && (!empty($_POST['content'])) && ($program_id == 1) && ($user_id != 1)) {
+            
+            $edittitle_and_content="UPDATE Blogs SET Title='$newtitle', Content='$content' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                $result = $mysqli->query($edittitle_and_content);
+                    if($result == FALSE) {
+                        echo("Error in changing title name and content in database.");
+                    }   
+                } //works
+            
+            $edit_userinblog="UPDATE UserInBlog SET User_Id='$user_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($edit_userinblog);
+                        if($result == FALSE) {
+                        echo("Error in editing username associated with that Blog.");
+                        }   
+                } //works
+            
+        } elseif (($blog_id != 1) && (!empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id == 1) && ($user_id != 1)) {
+            
+            $edittitle="UPDATE Blogs SET Title='$newtitle' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                $result = $mysqli->query($edittitle_and_content);
+                    if($result == FALSE) {
+                        echo("Error in changing title name in database.");
+                    }   
+                } //works
+            
+            $edit_userinblog="UPDATE UserInBlog SET User_Id='$user_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($edit_userinblog);
+                        if($result == FALSE) {
+                        echo("Error in editing username associated with that Blog.");
+                        }   
+                } //works
+            
+        } elseif (($blog_id == 1) && (!empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id == 1) && ($user_id != 1)) {
+            
+            echo("You must choose a valid blog name in order to change the title");
+            
+            $edit_userinblog="UPDATE UserInBlog SET User_Id='$user_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($edit_userinblog);
+                        if($result == FALSE) {
+                        echo("Error in editing username associated with that Blog.");
+                        }   
+                } //works
+            
+        } elseif (($blog_id == 1) && (!empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id != 1) && ($user_id == 1)) {
+            
+            echo("You must choose a valid blog name in order to change the title");
+            
+            $bloginprogram="UPDATE BlogInProgram SET Program_Id='$program_id' WHERE Blog_Id='$blog_id'";
+                if(!isset($_GET['Blog_Id'])){
+                    $result = $mysqli->query($bloginprogram);
+                        if($result == FALSE) {
+                        echo("Error in changing the program of your blog.");
+                        }   
+                } //works
+            
+        } elseif (($blog_id == 1) && (empty($_POST['newtitle'])) && (empty($_POST['content'])) && ($program_id == 1) && ($user_id == 1)) {
+                echo NULL;
+        }  
+                
+        } else { //pregmatch
+                echo "Bad input.";
+        }
+        
+        } //edit blog is pushed
+        
+?>
     
 
-    
+    </div> <!-- page content div -->
+   
 <?php    //this is to only show this information if you are logged in 
 }
 ?>
