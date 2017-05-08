@@ -13,14 +13,14 @@
 	
 	<div class="page-content">
 		<div class="page-heading">Costs and Expenses</div>
-		<div class="page-heading-2">Program Costs</div>
 			<div class="page-heading-4">
+                <h3>Program Costs</h3>
   				<ul class>
   					<li>• Program costs: $2,100-2,500 (estimated). This includes 3 weeks of housing, transportation, academic components, service learning &amp; cultural activities and most food. Note: Food costs in Vietnam are very reasonable.</li>
  					<li>• International airfare: $900-1,400. Last year some participants paid $870 RT from NYC.</li>
  				</ul></div>
-		<div class="page-heading-2">Additional Costs</div>
 			<div class="page-heading-4">
+                <h3>Additional Costs</h3>
   				<ul class>
   					<li>• Passport must have at least 6 months of validity. Expiration date July 2018 or later.</li>
  					<li>• Vietnam visa: $25 (e-visa, single entry, 30 days). Other options: $55 (1 yr multiple entries).</li>
