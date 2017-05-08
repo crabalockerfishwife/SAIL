@@ -19,7 +19,7 @@
         <p>The course is intended to provide you an introduction to Vietnam through the lens of climate change and its implications, not only globally but also how it has impacted the Mekong Delta region of Vietnam, one of the most at risk areas in the world in particular. The combination of classroom lectures, historical and cultural tours, and service learning experience while in the country will challenge you to grasp the enormous challenges posed by climate change while examining and considering possible solutions. From what you learn and experience during this course, we hope you will be a better-informed global citizen and able to share the climate change story beyond your education at Cornell.</p>
         </div>
         
-        <div class="page-heading"> By the end of this course, you will:</div>
+        <h3>By the end of the course, you will:</h3>
         <div class="page-heading-4">
   				<ul class>
   					<li>• Respect and appreciate the culture, history and resilience of Vietnam and its people.</li>
