@@ -6,19 +6,12 @@
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
 <body>
-	<?php
+	
+    <?php
 		include("../includes/header.php");
    		include("../includes/nav_pages.php");
-
-	//    require_once ("../includes/config.php");
-	//    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-	//    
-	//    if($mysqli->connect_error) {
-	//        die("Connection failed: " . $mysqli->connect_error);
-	//    } else {
-	//        echo NULL;
-	//    }
 	?>
+    
 	<div class="page-content">
 		<div class="page-heading">Classes and Faculty</div>
 		<div class="page-heading-2">Faculty Leaders</div>
@@ -45,6 +38,8 @@
 
                 <h4>Trần Thị Thanh Huyền, BA</h4>
                 <p>Trần thị Thanh Huyền is a lecturer at the faculty of Russian philology at the University of Social Sciences and Humanities (USSH), Ho Chi Minh City. She also works as a teaching assistant at the Center for Vietnamese Studies and Language, TDTU. Huyen loves to travel.  She has taken trips to coastal places in Vietnam and traveled to a few foreign countries.  "Travelling - it leaves you speechless, then turns you into a storyteller”.  She is going to explore the world so she can tell you her stories!  Email: tkxd0112@gmail.com. Ms. Huyen will travel to Can Tho and Phan Rang as a local program assistant for the Winter 2017 group.</p>
+                
+                <a href="http://english.tdt.edu.vn/">Visit Site</a>
 			</div>
         
             <button class="accordion">Can Tho University (CTU) Team</button>
@@ -78,12 +73,14 @@
                 <h4>Trần Thanh Bé, PhD</h4>
                 <p>Trần Thanh Bé is a reviewer for the Advisory Councils for Research and Development projects in the Mekong Delta.  Although retired, he still gives lectures and attends scientific councils in the Department of Rural Development at CTU. Dr. Bé received his Bachelor of Science degree in Agronomy from CTU in 1978; his Master's in Systems Agriculture at UWS-Hawkesbury, Australia,  in 1994 (thesis titled “Sustainability of a Rice-Shrimp Farming System in a Brackish Water Area of the Mekong Delta, Vietnam). He earned his PhD in Agriculture at University of Sydney, Australia in 2004 (dissertation titled, “Agricultural Extension in Vietnam: Alternative Institutional Arrangements”). Dr. Bé has collaborated in many research projects on rice production, farming systems, agriculture and rural development, and socioeconomic development of the Mekong Delta, as well as other international collaboration projects. In 2008 he received the Australian Alumni Award in 2008 for Research and Science by the Australian Consulate General and received the Vietnam State Medal of labour in 2010. From 2003-2015, he worked as the Director of Mekong Delta Development Institute of Can Tho University (MDI-CTU) and served as Director of Can Tho City Institute for Socio-Economic Development Studies (CIDS).  In 2015, after 37 years of working as a continuous lecturer-researcher, Dr. Be retired.</p>
                 
-                
+                <a href="https://www.ctu.edu.vn/en/">Visit Site</a>
             </div>
             <button class="accordion">Other Guest Lecturers</button>
 			<div class="panel">
                 <h4>Andrew Wyatt, PhD</h4>
   				<p> Andrew Wyatt is an Australian national who has 20 years of research and project management experience in the Mekong Region, he has a multi-disciplinary academic background in natural resource management with a Ph.D. in Political Ecology from the School of Geosciences, University of Sydney. Andrew’s academic and professional experience has been in diverse fields such as Integrated Biodiversity Conservation and Community Development, Climate Change Adaptation, Community-Based Natural Resource Management and Co-management, Integrated Water Resources Management, and Political Ecology. Over the last 15 years, he has been based in Vietnam where he has held academic and project management positions. Since 2013, he has worked for International Union for Conservation of Nature (IUCN), Viet Nam as its Mekong Delta Program Manager, overseeing the implementation of IUCN’s major projects in the Mekong Delta. As such, he manages IUCN’s HCMC project office and provides technical oversight of IUCN’s projects working on community and ecosystem-based adaptation in the Mekong Delta. Email: Andrew.WYATT@iucn.org</p>
+                <a href="https://www.iucn.org/about">Visit Site</a>
+
 			</div>
 	</div>
 
