@@ -15,10 +15,12 @@
 		<div class="page-heading">Application Requirements</div>
 		<div class="page-heading-2">Requirements</div>
 			<div class="page-heading-4">
-  				<p> Upper-level students only.  <br>
-                    Minimum GPA of 3.0 and good standing with the University (no pending Judicial Administrative violations). This GPA must be maintained over the program.<br>
-                    All accepted students must enroll in VIET 1100 (1 credit, fall only). <br>
-                    Permission code for ASIAN 3360/ALS 3600 will be issued after your acceptance into the program.</p></div>
+  				<ul class>
+  					<li>• Upper-level students only.</li>
+ 					<li>• Minimum GPA of 3.0 and good standing with the University (no pending Judicial Administrative violations). This GPA must be maintained over the program.</li>
+ 					<li>• Permission code for ASIAN 3360 will be issued after your acceptance into the program.</li>
+ 					<li>• All accepted students must enroll in VIET 1100 (1 credit, fall only)</li>
+ 				</ul>
   		<div class="page-heading-2">Qualifications</div>
             <div class="page-heading-4">
                     <p>The ideal candidate will demonstrate cross-cultural skills, flexibility, adaptability and maturity. Candidates should have demonstrated interests in Vietnam/Southeast Asia and issues on climate change, international development, and environmental studies. Candidates should exhibit excellent written and oral communication skills and have experience working as part of a team. Selected students must be willing to engage in service learning activities in local communities in Vietnam.</p>
