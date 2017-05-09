@@ -90,7 +90,11 @@
                         <li>• Optional: small flashlight</li>
                 </ul>
 			</div>
-
+        
+        <div id="backtotop">
+        <a id="topbutton" href="travelprep.php">BACK TO TOP</a>
+        </div>
+        
 	</div>
 
 	<div class="footer-bar"><br>© SAIL 2017</div>

@@ -85,9 +85,11 @@
                 <a href="https://www.iucn.org/about">Visit Site</a>
 
 			</div>
+        
         <div id="backtotop">
         <a id="topbutton" href="faculty.php">BACK TO TOP</a>
         </div>
+        
 	</div>
 
 	<div class="footer-bar"><br>© SAIL 2017</div>
