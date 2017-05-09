@@ -233,6 +233,17 @@ button {
     padding: 10px;
 }
 
+
+.page-heading a {
+    color: darkred;
+    text-decoration: none;
+}
+
+.page-heading a:hover {
+    color: darkblue;
+    text-decoration: none;
+}
+
 .page-heading-2 {
     color: black;
     font-size: 1.5em;
