@@ -23,7 +23,7 @@
                 <p>Rolling Admission: May 1, 2017 - August 25, 2017</p>
                 <p>Limited to 12 Students</p>
                 <p>Fall 2017 Requirement:  VIET 1100</p>
-                <a href="../includes/ASIAN3360ApplicationApril 2017.docx" target="_blank">Download Application</a>
+                <a href="../includes/ASIAN3360ApplicationApril2017.docx" target="_blank">Download Application</a>
 			 </div>
 <!--
 			<button class="accordion">Contact Information</button>

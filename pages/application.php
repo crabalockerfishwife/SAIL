@@ -28,7 +28,7 @@
                     <p>We welcome and encourage students from all colleges and majors to apply. </p>
                     </div>
         
-        <div class="page-heading-2">Click <a href="../includes/ASIAN3360ApplicationApril 2017.docx" target="_blank">here</a> to start the application process.</div>
+        <div class="page-heading-2">Click <a href="../includes/ASIAN3360ApplicationApril2017.docx" target="_blank">here</a> to start the application process.</div>
         <div class="page-heading-5">
             <p>Please note that this course is NOT an opportunity for a holiday. It should be treated as an opportunity for intense international experience with serious academic work and intercultural exchange. The field component will require a high level of cooperation and collegiality with traveling companions.</p></div>
 
