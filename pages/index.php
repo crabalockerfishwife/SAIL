@@ -12,24 +12,18 @@
     
 	?>
 	<div class="page-content">
-		<div class="page-heading">Spend three weeks in Vietnam!</div><br>
-		<div class="page-heading-2">ASIAN 3360
+		<div class="page-heading-6">ASIAN 3360
             Community Engagement &amp; Climate Change in the
             Mekong Delta: Insights into Vietnam</div>
-<!--			<button class="accordion">Application Information</button>-->
-<!--			<div class="panel">-->
+
+<!--
             <div class="page-heading-3"><h3>Application Information</h3>
   				<p>Early application decision: May 15, 2017</p>
                 <p>Rolling Admission: May 1, 2017 - August 25, 2017</p>
                 <p>Limited to 12 Students</p>
                 <p>Fall 2017 Requirement:  VIET 1100</p>
-                <a href="../includes/ASIAN3360ApplicationApril2017.docx" target="_blank">Download Application</a>
+                <a href="../includes/ASIAN3360ApplicationApril 2017.docx" target="_blank">Download Application</a>
 			 </div>
-<!--
-			<button class="accordion">Contact Information</button>
-			<div class="panel">
-  				<p>CornellinVietnam@cornell.edu</p>
-			</div>
 -->
         
         <br>
