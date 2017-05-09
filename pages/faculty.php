@@ -15,6 +15,9 @@
 	<div class="page-content">
 		<div class="page-heading">Classes and Faculty</div>
 		<div class="page-heading-2">Faculty Leaders</div>
+            <div class="page-heading-4">
+  				<p>Cornell in Rome's faculty are chosen from an international base of scholars, critics, architects, and artists — all experts in using the city as a resource for instruction and inspiration. Additionally, Cornell faculty from the architecture, art, and city and regional planning departments in Ithaca live and teach in Rome during the semester.</p>
+            </div>
 			
             <button class="accordion">Cornell University (CU) Team</button>
             <div class="panel">
@@ -82,6 +85,9 @@
                 <a href="https://www.iucn.org/about">Visit Site</a>
 
 			</div>
+        <div id="backtotop">
+        <a id="topbutton" href="faculty.php">BACK TO TOP</a>
+        </div>
 	</div>
 
 	<div class="footer-bar"><br>© SAIL 2017</div>

@@ -75,9 +75,10 @@ if(isset($_POST['loginsubmit'])) {
 <body>
     <div class="page-content">
         <div class="page-heading">Blog</div>
+        <div class="page-heading-4">
             <p>Through the course of a year, students engage in 5 credits of academic learning. Starting from VIET 1110 in the Fall and concluding with ASIAN 3360 in the Spring, students receive amble opportunity to learn and experience Vietnam both in the classroom and in the country itself. <br> These blogs represent the students work before, during, and after their stay in Vietnam.</p>
             <a href="../pages/winter2017.php">Winter 2017: Climate Change and Service Learning in the Mekong Delta, Vietnam</a>
-              
+              </div>
 
   <?php       
     if (isset($_SESSION['logged_user'])){      
@@ -530,7 +531,46 @@ if(isset($_POST['loginsubmit'])) {
         } //edit blog is pushed
         
 ?>
+    <div>
+    <button class="accordion">Delete a User</button>
+        <div class="panel">
+  		    <div id="deleteruser">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            <label>Author Name</label><select name="authorname">
+
+                <?php
+                    $array="SELECT User_Id, Author_Name from Users ORDER BY User_Id asc";
+                    $result = $mysqli->query($array);
+                            
+                        while($row = $result->fetch_assoc()) {
+                            $user_id=$row['User_Id'];
+                            $author_name = $row['Author_Name'];
+                            echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
+                        }
+                ?>
+            </select>
+            <input type="submit" name="deleteuser" value="Delete User">
+        </form>
+            </div> <!-- delete user div div -->
+                
+         </div>  <!-- panel  -->
+    </div> <!-- accordion--> 
+ 
     
+<?php
+        if (isset($_POST['deleteuser'])){
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname'])) {
+                $user_id= filter_input(INPUT_POST, 'authorname');
+    
+                $deleteuser="DELETE FROM Users WHERE User_Id='$user_id'";
+                $result = $mysqli->query($deleteuser);
+                    if($result == FALSE) {
+                        echo("Error in deleting user from database.");
+                    }   
+
+            }
+        } //end delete user
+?>
 
     </div> <!-- page content div -->
    
