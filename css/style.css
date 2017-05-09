@@ -248,7 +248,7 @@ button {
 
 .page-heading-4 {
     color: black;
-    margin-top: -20px;
+    margin-top: -10px;
     font-size: 1em;
     padding: 10px;
     margin-left: 20px;
@@ -355,8 +355,19 @@ div.panel {
 }
 
 #backtotop {
-    font-size: .75em;
+    padding-top: 30px;
+    margin-left: 50px;
+    font-size: .85em;
     margin-bottom: 30px;
-    font-weight: 500;
+    font-weight: 800;
     color: darkred;
 }
+
+#backtotop a:visited {
+    font-size: .85em;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: darkred;
+    text-decoration: none;
+}
+
