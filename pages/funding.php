@@ -47,7 +47,7 @@
   				<p><a href="https://seap.einaudi.cornell.edu/funding-opportunities-0">SEAP Funding</a> provides a wide array of funding opportunities for departments, graduate and undergraduate students, and student organizations. </p>
 			</div>
         <div id="backtotop">
-        <a id="topbutton" href="funding.php">BACK TO TOP</a>
+        <a id="topbutton" href="funding.php">BACK TO TOP &#9650;</a>
         </div>
         
 	</div>
