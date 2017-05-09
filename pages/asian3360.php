@@ -19,16 +19,16 @@
         <p>The course is intended to provide you an introduction to Vietnam through the lens of climate change and its implications, not only globally but also how it has impacted the Mekong Delta region of Vietnam, one of the most at risk areas in the world in particular. The combination of classroom lectures, historical and cultural tours, and service learning experience while in the country will challenge you to grasp the enormous challenges posed by climate change while examining and considering possible solutions. From what you learn and experience during this course, we hope you will be a better-informed global citizen and able to share the climate change story beyond your education at Cornell.</p>
         </div>
         
-        <h3>By the end of the course, you will:</h3>
         <div class="page-heading-4">
   				<ul class>
+                    <li><h3>By the end of this course, you will:</h3></li><br>
   					<li>• Respect and appreciate the culture, history and resilience of Vietnam and its people.</li>
  					<li>• Comprehend what climate change means to an agrarian country like Vietnam and implications for the global food system.</li>
  					<li>• Formulate solutions to the challenges posed by climate change to the Mekong Delta of Vietnam and beyond.</li>
  					<li>• Assess what was gained from the course and integrate this into your personal and professional life-path.</li>
-                    <li>• Realize the importance of sharing the climate change story with others.</li>
-                    <li>• Gain practical and meaningful international experience.</li>
-                    <li>Enhance your sense of worldview, civic engagement and social responsibility.</li>
+                    <li>• Realize the importance of sharing the climate change story with others.</li><br>
+                    <li>• Gain practical and meaningful international experience.</li><br>
+                    <li>• Enhance your sense of worldview, civic engagement and social responsibility.</li>
  				</ul>
         </div>
 

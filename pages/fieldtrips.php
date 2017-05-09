@@ -10,22 +10,21 @@
 		include("../includes/header.php");
    		include("../includes/nav_pages.php");
 
-	//    require_once ("../includes/config.php");
-	//    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-	//    
-	//    if($mysqli->connect_error) {
-	//        die("Connection failed: " . $mysqli->connect_error);
-	//    } else {
-	//        echo NULL;
-	//    }
 	?>
 	<div class="page-content">
 		<div class="page-heading">Field Trips</div>
-		<div class="page-heading-2">A sub-heading</div>
-			<button class="accordion">Expand this</button>
+		<div class="page-heading-2">This will be a title.</div>
+        <div class="page-heading-4">
+        <p>Some explanation.</p>
+            </div>
+        <div class="panelpix">
+			<button class="accordion">Field Trip 1</button>
 			<div class="panel">
-  				<p>Some content</p>
+  				<img src="../images/fieldtrip1.jpg" alt='Field Trip'>
+                <p>This will be some content about a specific field trip.</p>
+                </div>
 			</div>
+        
 			<button class="accordion">Expand this</button>
 			<div class="panel">
   				<p>Some content</p>

@@ -9,7 +9,7 @@
 	<?php
 		include("../includes/header.php");
    		include("../includes/nav.php");
-
+    
 	?>
 	<div class="page-content">
 		<div class="page-heading">Spend three weeks in Vietnam!</div><br>

@@ -1,5 +1,6 @@
 <div class="header-bar">
-	<img class="cornell-logo" src="../images/logo.png" alt="Cornell-Logo" />
+    <a href="http://asianstudies.cornell.edu/">
+	<img class="cornell-logo" src="../images/logo.png" alt="Cornell-Logo"/></a>
 
 	<?php
 
@@ -7,7 +8,7 @@
 
 		if ($current_page == "winter2017" || $current_page == "bloghome") {
 			if (empty($_SESSION['logged_user'])){
-				print ("<div id='loginformwelcome'> 
+				echo ("<div id='loginformwelcome'> 
             			<form action='bloghome.php' method='post'>
                         <br>
             	  	 	 	Username: <input type='text' name='authorname'>
