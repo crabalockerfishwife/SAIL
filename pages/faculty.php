@@ -87,7 +87,7 @@
 			</div>
         
         <div id="backtotop">
-        <a id="topbutton" href="faculty.php">BACK TO TOP</a>
+        <a id="topbutton" href="faculty.php">BACK TO TOP &#9650;</a>
         </div>
         
 	</div>
