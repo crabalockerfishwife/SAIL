@@ -40,28 +40,29 @@ if(isset($_POST['loginsubmit'])) {
             if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname']) && preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['password'])) {
             $username = filter_input(INPUT_POST, 'authorname', FILTER_SANITIZE_STRING);
             $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-            $hashpassword = '$2y$10$4MSLoGEop/TRC3TB96Dz5uq/c.jPlx8qqN3KKG/UlGVr963L5fLlG';
-                
-            if (password_verify($password, $hashpassword)) {
-        
-            $sql = "SELECT Author_Name, Hash_Password FROM Users;";  
-            $result=$mysqli->query($sql);
+            $match = false;
 
-                if($result && $result->num_rows==1){
-                    $row=$result->fetch_assoc();
-                        $database_username=$row['Author_Name'];
-                        $database_password=$row['Hash_Password'];
+            $hashpasswords_query = "SELECT Hash_Password FROM Users;";
+            $hashpasswords = array();
 
-                    if ($hashpassword == $database_password && $username == $database_username) {
-                        $_SESSION['logged_user'] = $username;
-                        echo"<script> window.location='bloghome.php';</script>";
-                     }
-             
-                    elseif ($username != $database_username) {
-                            echo "Please check your username.";
-                    } 
+            $result = $mysqli->query($hashpasswords_query);
+            if($result == FALSE) {
+                echo("Error in retrieving hashpasswords.");
+            }   
+            while ($row = $result->fetch_assoc()) {
+                 array_push($hashpasswords, $row['Hash_Password']);
+            }
+
+            foreach ($hashpasswords as $hashpassword){
+                if (password_verify($password, $hashpassword)) {
+                    $match = true;
+                    break;
                 }
-                
+            }
+
+            if ($match) {
+                $_SESSION['logged_user'] = $username;
+                echo"<script> window.location='bloghome.php';</script>";
             } else {
                 echo "Please check your credentials.";
             }
@@ -82,13 +83,15 @@ if(isset($_POST['loginsubmit'])) {
 
   <?php       
     if (isset($_SESSION['logged_user'])){      
-   ?>             
+   ?>      
+
+    <!-- Add a Blog -->       
        <div>
             <button class="accordion">Add a Blog</button>
             <div class="panel">
                 
-    <div id="addblog">
-        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+        <div id="addblog">
+            <form method="post" action="bloghome.php" enctype="multipart/form-data">
             <label>Title</label><input type="text" name="title" required/>
             <label>Content</label><input type="text" name="content" required/>
             <input type="file" name="new_upload_image">
@@ -221,6 +224,8 @@ if(isset($_POST['loginsubmit'])) {
 
         
 ?>
+
+    <!-- Delete a Blog -->
     <div>
     <button class="accordion">Delete a Blog</button>
         <div class="panel">
@@ -276,40 +281,8 @@ if(isset($_POST['loginsubmit'])) {
         } //delete blog end
 ?> 
     
-<div>
-    <button class="accordion">Add a Program</button>
-        <div class="panel">
-  		    <div id="addprogram">
-        <form method="post" action="bloghome.php" enctype="multipart/form-data">
-            <label>Progam Name</label><input type="text" name="programname" required/>
-            <label>Program Date</label><input type="text" name="programdate" required/>
-            <input type="submit" name="addprogram" value="Add Program">
-        </form>
-            </div> <!-- add program div -->
-                
-         </div>  <!-- panel  -->
-    </div> <!-- accordion--> 
- 
-    
-<?php
-        if (isset($_POST['addprogram'])){
-            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programdate']))) {
-                $programname= filter_input(INPUT_POST, 'programname');
-                $programdate= filter_input(INPUT_POST, 'programdate');
-    
-                $addprogram="INSERT INTO Programs (Program_Id, Program_Name, Program_Date) VALUES (NULL, '$programname' , '$programdate')";
-                $result = $mysqli->query($addprogram);
-                print_r($result);
-                    if($result == FALSE) {
-                        echo("Error in inserting into User in Blog.");
-                    }   
-
-            }
-        } //end add program
-
-?> 
-        
-<div>
+ <!-- Edit a Blog -->
+ <div>
             <button class="accordion">Edit a Blog</button>
             <div class="panel">
                 
@@ -531,6 +504,85 @@ if(isset($_POST['loginsubmit'])) {
         } //edit blog is pushed
         
 ?>
+
+<?php       
+    if ($_SESSION['logged_user']=="ThuyTranviet"){      
+   ?> 
+
+<!-- Add a program -->
+<div>
+    <button class="accordion">Add a Program</button>
+        <div class="panel">
+            <div id="addprogram">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            <label>Progam Name</label><input type="text" name="programname" required/>
+            <label>Program Date</label><input type="text" name="programdate" required/>
+            <input type="submit" name="addprogram" value="Add Program">
+        </form>
+            </div> <!-- add program div -->
+                
+         </div>  <!-- panel  -->
+    </div> <!-- accordion--> 
+    
+<?php
+        if (isset($_POST['addprogram'])){
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programdate']))) {
+                $programname= filter_input(INPUT_POST, 'programname');
+                $programdate= filter_input(INPUT_POST, 'programdate');
+    
+                $addprogram="INSERT INTO Programs (Program_Id, Program_Name, Program_Date) VALUES (NULL, '$programname' , '$programdate')";
+                $result = $mysqli->query($addprogram);
+                print_r($result);
+                    if($result == FALSE) {
+                        echo("Error in inserting into User in Blog.");
+                    }   
+
+            }
+        } //end add program
+
+?> 
+
+
+    <!-- Add a user -->
+    <div>
+    <button class="accordion">Add a User</button>
+        <div class="panel">
+            <div id="adduser">
+        <form method="post" action="bloghome.php" enctype="multipart/form-data">
+            <label>Author Name</label><input type="text" name="newauthorname" required/>
+            <label>Password</label><input type="text" name="newpassword" required/>
+            <input type="submit" name="adduser" value="Add User">
+        </form>
+            </div> <!-- add user div div -->
+                
+         </div>  <!-- panel  -->
+    </div> <!-- accordion--> 
+ 
+    
+<?php
+        if (isset($_POST['adduser'])){
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newauthorname'])) {
+                $new_username= ucwords(filter_input(INPUT_POST, 'newauthorname'));
+                $new_password = password_hash(filter_input(INPUT_POST, 'newpassword'), PASSWORD_DEFAULT);
+
+                if (in_array($new_username, $users)) {
+                    echo "User already exists";
+                }
+                else {
+                    $new_username = str_replace(' ', '', $new_username);
+                    $adduser="INSERT INTO Users (Author_Name, Hash_Password) VALUES ('$new_username', '$new_password');";
+                    $result = $mysqli->query($adduser);
+                    if($result == FALSE) {
+                            echo("Error in adding user to database.");
+                        }
+                }
+
+            }
+        } //end add user
+?>
+        
+    
+<!-- Delete a user -->
     <div>
     <button class="accordion">Delete a User</button>
         <div class="panel">
@@ -570,6 +622,10 @@ if(isset($_POST['loginsubmit'])) {
 
             }
         } //end delete user
+?>
+
+<?php    //this is to only show this information if you are logged in 
+}
 ?>
 
     </div> <!-- page content div -->
