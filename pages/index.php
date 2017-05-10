@@ -12,7 +12,7 @@
     
 	?>
 	<div class="page-content">
-		<div class="page-heading-2">ASIAN 3360
+		<div class="page-heading-6">ASIAN 3360
             Community Engagement &amp; Climate Change in the
             Mekong Delta: Insights into Vietnam</div>
 
