@@ -239,6 +239,7 @@ button {
 }
 
 .page-heading {
+    margin-top: 5px;
     color: black;
     font-size: 2em;
     padding: 10px;
@@ -402,4 +403,3 @@ div.panel {
     color: darkred;
     text-decoration: none;
 }
-
