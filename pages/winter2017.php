@@ -72,7 +72,51 @@ if(isset($_POST['loginsubmit'])) {
 
 	<div class="page-content">
 		<div class="page-heading">Winter 2017</div>
-		<div class="page-heading-2">A sub-heading</div>
+		<div class="page-heading-2">Student Blogs</div>
+  <?php  
+        
+ if(!isset($_GET['user_id'])){
+        $allinfo = $mysqli->query("SELECT Blogs.*, Programs.*, BlogInProgram.*, UserInBlog.*, Users.* from Blogs LEFT JOIN BlogInProgram on Blogs.Blog_Id = BlogInProgram.Blog_Id LEFT JOIN Programs on BlogInProgram.Program_Id = Programs.Program_Id LEFT JOIN UserInBlog on Blogs.Blog_Id = UserInBlog.Blog_Id INNER JOIN Users on UserInBlog.User_Id = Users.User_Id"); 
+        while($row = $allinfo->fetch_assoc()) {
+         
+            $blog_id = $row["Blog_Id"];
+            $program_id = $row["Program_Id"];
+            $title = $row["Title"];
+            $content = $row["Content"];
+            $program_name = $row["Program_Name"];
+            $program_date = $row["Program_Date"];
+            $user_id = $row["User_Id"];
+            $author_name = $row["Author_Name"];
+            
+            echo("<div class='page-heading-4'>");
+            echo( "<a href='winter2017.php?user_id=$user_id'>$author_name</a></p>");
+            echo("</div>");
+    }
+ } else if (isset($_GET['user_id'])){
+    $user_id=($_GET['user_id']);
+ 
+        $result = $mysqli->query("SELECT Blogs.*, Users.*, UserInBlog.* from Blogs INNER JOIN UserInBlog on Blogs.Blog_Id = UserInBlog.Blog_Id INNER JOIN Users on UserInBlog.User_Id = Users.User_Id WHERE UserInBlog.User_Id='$user_id'");
+
+        while($row=$result->fetch_assoc()) {
+
+            $content = $row["Content"];
+            $title = $row["Title"];
+            $user_id = $row["User_Id"];
+            $blog_id = $row["Blog_Id"];
+            $author_name = $row["Author_Name"];
+            
+            echo("<div class='page-heading-4'>");
+            echo($title);
+            echo("<br>");
+            echo("<br>");
+            echo("<br>");
+            echo("$content");
+            echo("</div>");
+ 
+        }
+ }
+   ?>     
+<!--
 			<button class="accordion">Expand this</button>
 			<div class="panel">
   				<p>Some content</p>
@@ -81,7 +125,7 @@ if(isset($_POST['loginsubmit'])) {
 			<div class="panel">
   				<p>Some content</p>
 			</div>
-		<div class="page-heading-2">Another sub-heading</div>
+-->
 	</div>
 
     <div class="footer-bar"><br>© SAIL 2017</div>
