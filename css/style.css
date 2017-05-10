@@ -4,6 +4,10 @@ html {
     background-color: white;
 }
 
+body {
+    padding: 20px;
+}
+
 .header-bar {
     background-color: black;
     height: 50px;
@@ -44,6 +48,11 @@ html {
     z-index: 999;
     font-weight: 200;
     cursor: pointer;
+}
+
+
+#contactform {
+    margin-left: 50px;
 }
 
 input {
@@ -111,6 +120,8 @@ input {
     margin-left: 35px;
     opacity: .8;
     margin-top: -50px;
+    
+    z-index: 999;
 }
 
 .bar-background {
@@ -121,7 +132,7 @@ input {
     left: 0px;
     width: 100%;
     display: block;
-    margin-top: 30px;
+    margin-top: 22px;
 }
 
 .medium-block-grid-6 {
@@ -360,14 +371,15 @@ div.panel {
 }
 
 #most-info {
-    display: inline-block;   
-    margin-left: 60px; 
-    text-align: left;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+    float: left;
 }
 
 #add-info {
     display: inline-block;
-    text-align: right;
+    float: right;
 }
 
 #addblog {
