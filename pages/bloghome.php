@@ -131,7 +131,7 @@ if(isset($_POST['loginsubmit'])) {
     
     
         if (isset($_POST['addblog'])){
-            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['title']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['content']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname']))))) {
+            if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['title']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['programname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname'])))) {
                 $file = $_FILES['new_upload_image'];
                 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
                 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
