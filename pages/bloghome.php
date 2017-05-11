@@ -565,11 +565,22 @@ if(isset($_POST['loginsubmit'])) {
                 $new_username= ucwords(filter_input(INPUT_POST, 'newauthorname'));
                 $new_password = password_hash(filter_input(INPUT_POST, 'newpassword'), PASSWORD_DEFAULT);
 
+                $usernames_query = "SELECT Author_Name FROM Users;";
+                $users = array();
+
+                $result = $mysqli->query($usernames_query);
+                if($result == FALSE) {
+                    echo("Error in retrieving usernames.");
+                }   
+                while ($row = $result->fetch_assoc()) {
+                    array_push($users, $row['Author_Name']);
+                }
+
+                $new_username = str_replace(' ', '', $new_username);
                 if (in_array($new_username, $users)) {
                     echo "User already exists";
                 }
                 else {
-                    $new_username = str_replace(' ', '', $new_username);
                     $adduser="INSERT INTO Users (Author_Name, Hash_Password) VALUES ('$new_username', '$new_password');";
                     $result = $mysqli->query($adduser);
                     if($result == FALSE) {
