@@ -556,8 +556,10 @@ if(isset($_POST['loginsubmit'])) {
             <div id="adduser">
         <form method="post" action="bloghome.php" enctype="multipart/form-data">
             <label>Author Name</label><input type="text" name="newauthorname" required/>
-            <label>Password</label><input type="password" name="newpassword" required/>
+
+            <label> Password </label><input type="password" name="newpassword" required/>
             <label>Confirm Password</label><input type="password" name="new_password_confirm" required/>
+
             <input type="submit" name="adduser" value="Add User">
         </form>
             </div> <!-- add user div div -->
@@ -568,6 +570,7 @@ if(isset($_POST['loginsubmit'])) {
     
 <?php
         if (isset($_POST['adduser'])){
+
             if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newauthorname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newpassword']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['new_password_confirm'])))) {
                 $new_username= ucwords(filter_input(INPUT_POST, 'newauthorname'));
                 $new_password= (filter_input(INPUT_POST, 'newpassword'));
@@ -602,6 +605,7 @@ if(isset($_POST['loginsubmit'])) {
             } else {
                 echo "Passwords do not match";
                 }
+            
             }
         } //end add user
 ?>
