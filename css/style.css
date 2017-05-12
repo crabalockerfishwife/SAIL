@@ -273,11 +273,89 @@ button {
 
 .page-heading-4 {
     color: black;
-    margin-top: -10px;
+    margin-top: 5px;
     font-size: 1em;
     padding: 10px;
     margin-left: 20px;
 }
+
+.page-heading-4 p {
+    width: 95%;
+}
+
+h4 {
+    color: black;
+    margin-left: 60px;
+}
+
+.page-heading-4 a {
+    text-decoration: none;
+    font-weight: 800;
+    color: black;
+}
+
+.page-heading-4 a:hover {
+    text-decoration: underline;
+    color:deepskyblue;
+    font-weight: 800;
+}
+
+table {
+    width: 70%;
+    margin-left: 100px;
+    padding: 2px;
+}
+
+table, tr {
+    border: 1.5px solid darkgray;
+    border-collapse: collapse;
+}
+
+table, td {
+    padding-top: 1px;
+     padding-bottom: 1px;
+}
+
+th, td {
+    padding: 10px;
+    align-content: center;
+}
+
+.column2 {
+  width: 150px;
+    text-align: center;
+}
+
+
+.page-heading-9 {
+    color: black;
+    margin-top: 5px;
+    font-size: 1em;
+    padding: 5px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.page-heading-9 a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black;
+    font-weight: 800;
+}
+
+.page-heading-9 a:hover {
+    text-decoration: underline;
+    color:deepskyblue;
+}
+
+.page-heading-9 img {
+    height: 275px;
+    width: 415px;
+    margin-left: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 
 .page-heading-5 {
     color: black;
@@ -385,6 +463,10 @@ div.panel {
 
 #addblog {
     padding: 30px;
+}
+
+#addblog input {
+    text-area
 }
 
 #backtotop {
