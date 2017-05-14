@@ -6,6 +6,12 @@ if (isset($_SESSION['logged_user'])){
         } 
 }
 
+$myfile = fopen("../includes/users.txt", "r") or die("Unable to open file!");
+$all_users = fread($myfile,filesize("../includes/users.txt"));
+fclose($myfile);
+
+$all_users_array = explode(", ", $all_users);
+
 ?> 
 
 <!DOCTYPE html>
@@ -86,6 +92,8 @@ if(isset($_POST['loginsubmit'])) {
       <?php 
      
         $allinfo = $mysqli->query("SELECT Blogs.*, Programs.*, BlogInProgram.*, UserInBlog.*, Users.* from Blogs LEFT JOIN BlogInProgram on Blogs.Blog_Id = BlogInProgram.Blog_Id LEFT JOIN Programs on BlogInProgram.Program_Id = Programs.Program_Id LEFT JOIN UserInBlog on Blogs.Blog_Id = UserInBlog.Blog_Id INNER JOIN Users on UserInBlog.User_Id = Users.User_Id GROUP BY Users.User_Id"); 
+        
+        $all_users_array_index = 2;
         while($row = $allinfo->fetch_assoc()) {
          
             $blog_id = $row["Blog_Id"];
@@ -98,7 +106,12 @@ if(isset($_POST['loginsubmit'])) {
             $author_name = $row["Author_Name"];
             
             echo("<div class='page-heading-9'>");
-            echo( "<a href='winter2017.php?user_id=$user_id'>$author_name</a></p>");
+            if ($all_users_array_index==4 || $all_users_array_index==8 || $all_users_array_index==10) {
+                $all_users_array_index = $all_users_array_index+1;
+            }
+            $user = $all_users_array[$all_users_array_index];
+            $all_users_array_index = $all_users_array_index+1;
+            echo( "<a href='winter2017.php?user_id=$user_id'>$user</a></p>");
             echo("</div>");
     }
  

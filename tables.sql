@@ -69,3 +69,12 @@ CREATE TABLE `UserInProgram` (
 
 ALTER TABLE Blogs
 ADD Date date NOT NULL;
+
+
+ --
+ -- Update Users, Blogs and Programs table to restore their primary key increment values (keeping this here for safe-keeping)
+ --
+ 
+ Alter Table Users AUTO_INCREMENT = 2;
+ Alter Table Blogs AUTO_INCREMENT = 2;
+ Alter Table Programs AUTO_INCREMENT = 3;

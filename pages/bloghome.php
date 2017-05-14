@@ -6,6 +6,12 @@ if (isset($_SESSION['logged_user'])){
         } 
 }
 
+$myfile = fopen("../includes/users.txt", "r") or die("Unable to open file!");
+$all_users = fread($myfile,filesize("../includes/users.txt"));
+fclose($myfile);
+
+$all_users_array = explode(", ", $all_users);
+
 ?> 
 
 <!DOCTYPE html>
@@ -43,32 +49,22 @@ if(isset($_POST['loginsubmit'])) {
             if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['authorname']) && preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['password'])) {
             $username = filter_input(INPUT_POST, 'authorname', FILTER_SANITIZE_STRING);
             $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-            $match = false;
 
-            $hashpasswords_query = "SELECT Hash_Password FROM Users;";
-            $hashpasswords = array();
-
-            $result = $mysqli->query($hashpasswords_query);
+            $query = "SELECT * FROM Users;";
+            echo password_hash($username, PASSWORD_DEFAULT);
+            $result = $mysqli->query($query);
             if($result == FALSE) {
                 echo("Error in retrieving hashpasswords.");
             }   
-            while ($row = $result->fetch_assoc()) {
-                 array_push($hashpasswords, $row['Hash_Password']);
-            }
-
-            foreach ($hashpasswords as $hashpassword){
-                if (password_verify($password, $hashpassword)) {
-                    $match = true;
-                    break;
+            
+            while($row = $result->fetch_assoc()) {
+                $hash_username=$row['Author_Name'];
+                $hash_password = $row['Hash_Password'];
+                if (password_verify($username, $hash_username) && password_verify($password, $hash_password)) {
+                    $_SESSION['logged_user'] = $username;
+                    echo"<script> window.location='bloghome.php';</script>";
                 }
-            }
-
-            if ($match) {
-                $_SESSION['logged_user'] = $username;
-                echo"<script> window.location='bloghome.php';</script>";
-            } else {
-                echo "Please check your credentials.";
-            }
+            } 
         }  //pregmatch    
             else {
                 echo "Bad input.";
@@ -120,12 +116,18 @@ if(isset($_POST['loginsubmit'])) {
             <label>Author</label><select name="authorname">
 
                 <?php
-                    $array="SELECT User_Id, Author_Name from Users";
+                    $array="SELECT User_Id, Author_Name from Users ORDER BY User_Id ASC";
                     $result = $mysqli->query($array);
                             
+
+                        $all_users_array_index = 0;
+
+                        $all_users_array_index = 0;
                         while($row = $result->fetch_assoc()) {
                             $user_id=$row['User_Id'];
-                            $author_name = $row['Author_Name'];
+                            $author_name = $all_users_array[$all_users_array_index];
+                            $all_users_array_index = $all_users_array_index+1;
+
                             echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
                         }
                 ?>
@@ -312,10 +314,13 @@ if(isset($_POST['loginsubmit'])) {
                     $array="SELECT User_Id, Author_Name from Users ORDER BY User_Id ASC";
                     $result = $mysqli->query($array);
                             
+                        $all_users_array_index = 0;
                         while($row = $result->fetch_assoc()) {
                             $user_id=$row['User_Id'];
-                            $author_name = $row['Author_Name'];
-                            echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
+                            $author_name=$row['Author_Name'];
+                            $user = $all_users_array[$all_users_array_index];
+                            $all_users_array_index = $all_users_array_index+1;
+                            echo "<option value=\"$user_id\" label=\" $user\">$user</option>";
                         }
                 ?>
             </select><br><br>
@@ -554,12 +559,13 @@ if(isset($_POST['loginsubmit'])) {
 <?php
         if (isset($_POST['adduser'])){
             if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newauthorname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newpassword']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['new_password_confirm'])))) {
-                $new_username= ucwords(filter_input(INPUT_POST, 'newauthorname'));
+                $new_username= str_replace(' ', '', ucwords(filter_input(INPUT_POST, 'newauthorname')));
                 $new_password= (filter_input(INPUT_POST, 'newpassword'));
                 $new_password_confirm= (filter_input(INPUT_POST, 'new_password_confirm'));
                 
                 if($new_password_confirm == $new_password) {
                 
+                    $username_hash = password_hash($new_username, PASSWORD_DEFAULT);
                     $password_hash = password_hash(filter_input(INPUT_POST, 'newpassword'), PASSWORD_DEFAULT);
 
                     $usernames_query = "SELECT Author_Name FROM Users;";
@@ -573,16 +579,21 @@ if(isset($_POST['loginsubmit'])) {
                         array_push($users, $row['Author_Name']);
                     }
 
-                    $new_username = str_replace(' ', '', $new_username);
-                    if (in_array($new_username, $users)) {
+                    if (in_array($username_hash, $users)) {
                         echo "User already exists";
                     }
                     else {
-                        $adduser="INSERT INTO Users (Author_Name, Hash_Password) VALUES ('$new_username', '$password_hash');";
+                        $adduser="INSERT INTO Users (Author_Name, Hash_Password) VALUES ('$username_hash', '$password_hash');";
                         $result = $mysqli->query($adduser);
                         if($result == FALSE) {
                                 echo("Error in adding user to database.");
                             }
+                        else {
+                            $myfile = fopen("../includes/users.txt", "a");
+                            $new_data = $new_username.", ";
+                            fwrite($myfile, $new_data);
+                            fclose($myfile);
+                        }
                     }
             } else {
                 echo "Passwords do not match";
@@ -604,9 +615,12 @@ if(isset($_POST['loginsubmit'])) {
                     $array="SELECT User_Id, Author_Name from Users ORDER BY User_Id asc";
                     $result = $mysqli->query($array);
                             
+                        $all_users_array_index = 0;
                         while($row = $result->fetch_assoc()) {
                             $user_id=$row['User_Id'];
-                            $author_name = $row['Author_Name'];
+                            $author_name = $all_users_array[$all_users_array_index];
+                            $all_users_array_index = $all_users_array_index+1;
+
                             echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
                         }
                 ?>
