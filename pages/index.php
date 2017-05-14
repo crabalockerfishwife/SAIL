@@ -11,64 +11,57 @@
    		include("../includes/nav.php");
     
 	?>
-	<div class="page-content">
-		<div class="page-heading-2">ASIAN 3360
+	<div class="page-content-1">
+        <div class="page-heading-2"><a href="http://courses.cornell.edu/preview_course_nopop.php?catoid=28&coid=467865">ASIAN 3360</a>
             Community Engagement &amp; Climate Change in the
             Mekong Delta: Insights into Vietnam</div>
+            <div class="page-heading-10">
+                <p>We live in an interconnected and interdependent world and with our changing climate this connectivity is becoming even more apparent. We are all in this together and will only solve this grand challenge by developing new global partnerships. This course was created as a way to help us all become more informed global citizens through firsthand experience of impacts due to climate change while gaining meaningful international engagements with the people in the Mekong Delta, Vietnam.</p>
 
-<!--
-            <div class="page-heading-3"><h3>Application Information</h3>
-  				<p>Early application decision: May 15, 2017</p>
-                <p>Rolling Admission: May 1, 2017 - August 25, 2017</p>
-                <p>Limited to 12 Students</p>
-                <p>Fall 2017 Requirement:  VIET 1100</p>
-                <a href="../includes/ASIAN3360ApplicationApril 2017.docx" target="_blank">Download Application</a>
-			 </div>
--->
-        
+                <p>The course is intended to provide you an introduction to Vietnam through the lens of climate change and its implications, not only globally but also how it has impacted the Mekong Delta region of Vietnam, one of the most at risk areas in the world in particular. The combination of classroom lectures, historical and cultural tours, and service learning experience while in the country will challenge you to grasp the enormous challenges posed by climate change while examining and considering possible solutions. From what you learn and experience during this course, we hope you will be a better-informed global citizen and able to share the climate change story beyond your education at Cornell.</p>
+
+                <p>Permission of instructor required. Students must take both ASIAN 3360 and ASIAN 3361 to receive course credit. This yearlong course includes seven weeks during the second half of the fall semester and first half of the spring semester, and a January in-country two-week service-learning experience.</p>
+            </div>
         <br>
         <div id='contactform'> 
             <form action='index.php' method='post'>
-            <div class="page-heading">Contact Form</div><br>
                 <div id="most-info">
-                    Name: <input type="text" name="name" value=""> <br>
-                    E-mail: <input type="email" name="email" value=""> <br>
-                    Phone Number: <input type="tel" name="phone" value=""> <br>
-                    Select Your Graduation Year: 
+                    <h4>Contact Cornell in Vietnam</h4>
+                    <label> Name: </label> <input type="text" name="fullname" value=""><br>
+                     <label> Email: </label> <input type="email" name="email" value=""> <br>
+                     <label> Graduation Year: </label>
                     <select name="gradyear">
                         <option value="">Select a Year</option>
                         <option value="2018"> 2018 </option>
                         <option value="2020"> 2019</option>
                         <option value="2019"> 2020 </option>
-                </select>
-                </div>
-                <div class="add-info">Additional Information:<br>
+                </select><br>
+                
+                <label> Message: </label><br>
                     <textarea id="additionalinformation" name="additionalinformation" rows="3" cols="50"></textarea><br>
                     <input type="submit" name="submit" value="Contact Us"><br>
+           	
                 </div>
-           	</form>
+                </form>
         </div>
 
         <?php
-
-        if (isset($_POST['submit'])) { #to check if the user submitted
-                
-                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+         
+            if (isset($_POST['submit'])) {
+                $name = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
                 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-                $phone = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_INT);
+                $gradyear = filter_input(INPUT_POST, 'gradyear', FILTER_VALIDATE_INT);
                 $additionalinformation = filter_input(INPUT_POST, 'additionalinformation', FILTER_SANITIZE_STRING);
-                if ($gradyear != "Select a Year") {
-                    $gradyear = filter_input(INPUT_POST, 'gradyear', FILTER_SANITIZE_STRING);
-                }
-                
-                $to = 'CornellinVietnam@cornell.edu' . ',';
-                $from = $email;
-                $subject = "Inquiry about Cornell in Vietnam from $name.";
-                $message = "The Provided Information:\r\nName: $name\r\nEmail: $email\r\nPhone Number:
-                $phone\r\nAdditional Information: $additionalinformation";
 
-        }
+            ini_set("SMTP", "aspmx.l.google.com");
+            ini_set("sendmail_from", $email);
 
+            $message = "Name: $name\r\nEmail: $email\r\nYear: $gradyear\r\nMessage: $additionalinformation";
+            $headers = "From: $email";
+
+            mail("CornellinVietnam@cornell.edu", "Inquiry from $name, $email", $message, $headers);
+            }
+        
         ?>
         
 	</div>

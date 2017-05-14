@@ -15,8 +15,7 @@ if (isset($_SESSION['logged_user'])){
         <title>Cornell in Vietnam | Blog</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="stylesheet" href="../css/widgEditor.css" />
-        <link rel="stylesheet" href="../widgEditor/css/widgEditor.css" />
-        <script src="../scripts/widgEditor.js"></script>
+        <script src="../ckeditor/ckeditor.js"></script>
         
     </head>
 
@@ -82,6 +81,7 @@ if(isset($_POST['loginsubmit'])) {
         <div class="page-heading">Blog</div>
         <div class="page-heading-4">
             <p>Through the course of a year, students engage in 5 credits of academic learning. Starting from VIET 1110 in the Fall and concluding with ASIAN 3360 in the Spring, students receive amble opportunity to learn and experience Vietnam both in the classroom and in the country itself. <br> These blogs represent the students work before, during, and after their stay in Vietnam.</p>
+            <p>We expect the group blog to be prepared and shared every 3-4 days (min of 4 blogs total).  This will be an opportunity to highlight particular experiences (e.g., the war remnant museum, a conversation with a farmer) as well as begin to share the story of climate change and the Mekong Delta, today, and in the future. Given the intense and full schedule while in Vietnam, there is time set aside each day to reflect on experiences and observations and to share these with fellow students and instructors through both conversation and importantly, the group blog.</p>
             <a href="../pages/winter2017.php">Winter 2017: Climate Change and Service Learning in the Mekong Delta, Vietnam</a>
               </div>
 
@@ -92,14 +92,17 @@ if(isset($_POST['loginsubmit'])) {
     <!-- Add a Blog -->       
        <div>
             <button class="accordion">Add a Blog</button>
-            <div class="panel">
+            <div class="panel"><br>
                 
         <div id="addblog">
             <form method="post" action="bloghome.php" enctype="multipart/form-data">
             <label>Title</label><input type="text" name="title" required/>
-                <label>Content</label>
-           <textarea id="widgEditor" name="content"></textarea>
-            <input type="file" name="new_upload_image">
+                <label>Content</label><br><br>
+            <textarea id="editor1" name="content"></textarea><br>
+            <script>
+                CKEDITOR.replace( 'editor1' );
+            </script>
+            <input type="file" name="new_upload_image"><br>
             <label>Program</label><select name="programname">
 
                 <?php
@@ -112,7 +115,7 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$program_id\" label=\" $program_name\">$program_name</option>";
                         }
                 ?>
-            </select>
+            </select><br>
             
             <label>Author</label><select name="authorname">
 
@@ -126,9 +129,10 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
                         }
                 ?>
-            </select>
+            </select><br>
             
             <input type="submit" name="addblog" value="Add Blog">
+                <p><br></p>
         </form>
             </div> <!-- addblog div -->
                 
@@ -157,7 +161,6 @@ if(isset($_POST['loginsubmit'])) {
                         echo("");
                     } else { move_uploaded_file($temporaryname,"../images/$originalname");
                         $_SESSION['new_upload_image'][] = $originalname;
-                        print("$originalname was uploaded successfully");
                     }
                 }
                    
@@ -185,21 +188,6 @@ if(isset($_POST['loginsubmit'])) {
                         }   
                 }
             
-//            $programname_grab="SELECT Program_Name, Program_Date FROM Programs WHERE Program_Id='$program_id'";
-//            $query = $mysqli->query($programname_grab);
-//                while($result = $query->fetch_assoc()) {
-//                    $program_name=$result['Program_Name'];
-//                    $program_date=$result['Program_Date'];
-             
-            
-//            $program_query="INSERT INTO Programs (Program_Id, Program_Name, Program_Date) VALUES ('$program_id', '$program_name', '$program_date');";
-//                if(!isset($_GET['programname'])){
-//                    $result = $mysqli->query($program_query);
-//                        if($result == FALSE) {
-//                        echo("Error in inserting into Program.");
-//                        }   
-//                }
-//            }
             
             $user_blog="INSERT INTO UserInBlog (User_Id, Blog_Id) VALUES ('$user_id', '$blog_id');";
                 if(!isset($_GET['authorname'])){
@@ -208,13 +196,6 @@ if(isset($_POST['loginsubmit'])) {
                         echo("Error in inserting into User in Blog.");
                         }   
                 }
-            
-//            $user_program="INSERT INTO UserInProgram (User_Id, Program_Id) VALUES ('$user_id', '$program_id');";
-//                if(!isset($_GET['authorname'])){
-//                    $result = $mysqli->query($user_program);
-//                        if($result == FALSE) {
-//                        echo("Error in inserting into User in Program.");
-//                        }   
             
             }
             
@@ -234,7 +215,7 @@ if(isset($_POST['loginsubmit'])) {
     <!-- Delete a Blog -->
     <div>
     <button class="accordion">Delete a Blog</button>
-        <div class="panel">
+        <div class="panel"><br>
   		    <div id="deleteblog">
         <form method="post" action="bloghome.php" enctype="multipart/form-data">
             <label>Blog Title</label><select name="blogtitle">
@@ -249,7 +230,7 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$blog_id\" label=\" $title\">$title</option>";
                         }
                 ?>
-            </select>
+            </select><br>
             
 
             <input type="submit" name="deleteblog" value="Delete Blog">
@@ -290,12 +271,12 @@ if(isset($_POST['loginsubmit'])) {
  <!-- Edit a Blog -->
  <div>
             <button class="accordion">Edit a Blog</button>
-            <div class="panel">
+            <div class="panel"><br>
                 
-    <div id="addblog">
+    <div id="editblog">
         <form method="post" action="bloghome.php" enctype="multipart/form-data">
             
-            <label>Blog Title</label><select name="oldtitle">
+            <label>Blog Title</label><select name="oldtitle"> <br>
 
                 <?php
                     $array="SELECT Blog_Id, Title from Blogs ORDER BY Blog_Id ASC";
@@ -307,9 +288,10 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$blog_id\" label=\" $title\">$title</option>";
                         }
                 ?>
-            </select>
-            <label>New Title</label><input type="newtext" name="newtitle"/>
-            <label>Content</label><input type="text" name="content"/>
+            </select><br>
+            
+            <label>New Title</label><input type="text" name="newtitle"/><br>
+            <label>Content</label><textarea name="content"></textarea><br>
             <label>Program</label><select name="programname">
 
                 <?php
@@ -322,9 +304,9 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$program_id\" label=\" $program_name\">$program_name</option>";
                         }
                 ?>
-            </select>
+            </select><br>
             
-            <label>Author</label><select name="authorname">
+            <label>Author</label><select name="authorname"><br>
 
                 <?php
                     $array="SELECT User_Id, Author_Name from Users ORDER BY User_Id ASC";
@@ -336,11 +318,12 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
                         }
                 ?>
-            </select>
+            </select><br><br>
             
             <input type="submit" name="editblog" value="Edit Blog">
         </form>
-            </div> <!-- addblog div -->
+        <p><br></p>
+            </div> <!-- editblog div -->
                 
          </div> <!-- panel -->
     </div> <!-- accordion--> 
@@ -518,13 +501,14 @@ if(isset($_POST['loginsubmit'])) {
 <!-- Add a program -->
 <div>
     <button class="accordion">Add a Program</button>
-        <div class="panel">
+        <div class="panel"><br>
             <div id="addprogram">
         <form method="post" action="bloghome.php" enctype="multipart/form-data">
-            <label>Progam Name</label><input type="text" name="programname" required/>
-            <label>Program Date</label><input type="text" name="programdate" required/>
+            <label>Progam Name</label><input type="text" name="programname" required/><br><br>
+            <label>Program Date</label><input type="text" name="programdate" required/><br><br>
             <input type="submit" name="addprogram" value="Add Program">
         </form>
+            
             </div> <!-- add program div -->
                 
          </div>  <!-- panel  -->
@@ -552,16 +536,15 @@ if(isset($_POST['loginsubmit'])) {
     <!-- Add a user -->
     <div>
     <button class="accordion">Add a User</button>
-        <div class="panel">
+        <div class="panel"><br>
             <div id="adduser">
         <form method="post" action="bloghome.php" enctype="multipart/form-data">
-            <label>Author Name</label><input type="text" name="newauthorname" required/>
-
-            <label> Password </label><input type="password" name="newpassword" required/>
-            <label>Confirm Password</label><input type="password" name="new_password_confirm" required/>
-
+            <label>Author Name</label><br><br><br><input type="text" name="newauthorname" required/><br>
+            <label>Password</label><br><br><br><input type="password" name="newpassword" required/><br><br>
+            <label>Confirm Password</label><br><br><br><input type="password" name="new_password_confirm" required/><br><br><br>
             <input type="submit" name="adduser" value="Add User">
         </form>
+                <p><br></p>
             </div> <!-- add user div div -->
                 
          </div>  <!-- panel  -->
@@ -570,7 +553,6 @@ if(isset($_POST['loginsubmit'])) {
     
 <?php
         if (isset($_POST['adduser'])){
-
             if (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newauthorname']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['newpassword']) && (preg_match("/^[A-Za-z0-9_,.!' ]*$/", $_POST['new_password_confirm'])))) {
                 $new_username= ucwords(filter_input(INPUT_POST, 'newauthorname'));
                 $new_password= (filter_input(INPUT_POST, 'newpassword'));
@@ -605,7 +587,6 @@ if(isset($_POST['loginsubmit'])) {
             } else {
                 echo "Passwords do not match";
                 }
-            
             }
         } //end add user
 ?>
@@ -614,7 +595,7 @@ if(isset($_POST['loginsubmit'])) {
 <!-- Delete a user -->
     <div>
     <button class="accordion">Delete a User</button>
-        <div class="panel">
+        <div class="panel"><br>
   		    <div id="deleteruser">
         <form method="post" action="bloghome.php" enctype="multipart/form-data">
             <label>Author Name</label><select name="authorname">
@@ -629,7 +610,7 @@ if(isset($_POST['loginsubmit'])) {
                             echo "<option value=\"$user_id\" label=\" $author_name\">$author_name</option>";
                         }
                 ?>
-            </select>
+            </select><br>
             <input type="submit" name="deleteuser" value="Delete User">
         </form>
             </div> <!-- delete user div div -->

@@ -10,44 +10,44 @@
     
       <li>
         <div class="dropdown">
-          <button class="dropbtn">Admissions and Tuition</button>
+          <button class="dropbtn">Admissions &amp; Tuition</button>
             <div class="dropdown-content">
               <a href="../pages/application.php">Application</a>
-              <a href="../pages/expenses.php">Cost and Expenses</a>
+              <a href="../pages/expenses.php">Cost &amp; Expenses</a>
               <a href="../pages/travelprep.php">Travel Preparation</a>
               <a href="../pages/funding.php">Financial Aid</a>
             </div>
         </div>
       </li>
-    
-      <li>
+        <li>
         <div class="dropdown">
-          <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Facilities and Housing</button>
+          <button class="dropbtn">Faculty &amp; Service Learning</button>
+            <div class="dropdown-content">
+              <a href="../pages/faculty.php">Faculty</a>
+              <a href="../pages/fieldtrips.php">Service Learning Trips</a>
+            </div>
+        </div>
+      </li>
+        
+        <li>
+        <div class="dropdown">
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/calendar.php';">Sample Calendar</button>
         </div>
       </li>
   
       <li>
         <div class="dropdown">
-          <button class="dropbtn">Classes and Faculty</button>
-            <div class="dropdown-content">
-              <a href="../pages/asian3360.php">ASIAN 3360</a>
-              <a href="../pages/faculty.php">Faculty</a>
-              <a href="../pages/fieldtrips.php">Field Trips</a>
-            </div>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Housing</button>
         </div>
       </li>
 
       <li>
         <div class="dropdown">
-          <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Other Opportunities</button>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Past Participants</button>
         </div>
       </li>
         
-    <li>
-        <div class="dropdown">
-          <button class="dropbtn" type="button" onclick="location.href ='../pages/calendar.php';">Sample Calendar</button>
-        </div>
-      </li>
+    
 
       <li>
         <div class="dropdown">

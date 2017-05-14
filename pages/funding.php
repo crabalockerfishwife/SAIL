@@ -15,7 +15,7 @@
 		<div class="page-heading">Financial Aid Opportunities</div>
 		<div class="page-heading-2">University Funding Options</div>
             
-            <div class="page-content-1">
+            <div class="page-content-2">
   				<p>As you begin to think about potential funding sources, make sure to first check in with <a href="http://finaid.cornell.edu/types-aid/grants-and-scholarships">Cornell's Financial Aid Office</a>. If you are an aid recipient, they can discuss the financial aid options that are available to you. Furthermore, if you have any questions about funding opportunities, please contact Jenna Bittenbender at <a href="mailto:jbb299@cornell.edu?subject=Financial%20Aid%20Inquiry:%20Cornell%20in%20Vietnam">jbb299@cornell.edu</a>.</p>
 			</div>
         
@@ -46,8 +46,9 @@
 			<div class="panel">
   				<p><a href="https://seap.einaudi.cornell.edu/funding-opportunities-0">SEAP Funding</a> provides a wide array of funding opportunities for departments, graduate and undergraduate students, and student organizations. </p>
 			</div>
+        
         <div id="backtotop">
-        <a id="topbutton" href="funding.php">BACK TO TOP &#9650;</a>
+        <a id="topbutton">BACK TO TOP &#9650;</a>
         </div>
         
 	</div>

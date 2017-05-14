@@ -142,16 +142,7 @@ if(isset($_POST['loginsubmit'])) {
         }
  }
    ?>     
-<!--
-			<button class="accordion">Expand this</button>
-			<div class="panel">
-  				<p>Some content</p>
-			</div>
-			<button class="accordion">Expand this</button>
-			<div class="panel">
-  				<p>Some content</p>
-			</div>
--->
+
 	</div>
 
     <div class="footer-bar"><br>© SAIL 2017</div>

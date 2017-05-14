@@ -31,7 +31,7 @@
         </tr>
 
         <tr>
-            <td>Pre-enroll in Asian 3360</td>
+            <td>Pre-enroll in ASIAN 3360</td>
             <td class="column2">Nov 2-Nov 9</td>
         </tr>    
         
@@ -46,119 +46,90 @@
             <h4>Winter in Vietnam Travel Itinerary</h4>
         </tr>
         <tr>
-            <td>Optional: Travel to Ho Chi Minh City &amp; and explore city independently</td>
-            <td class="column2">Dec 28-Dec 30</td>
+            <td>Early Arrivals in Vietnam; independent exploration of city</td>
+            <td class="column2">Dec 29-Jan 2</td>
         </tr>
             
         <tr>
-            <td>Cornell in Vietnam Program Commences; guided tour of city; Welcome &amp; Orientation Party</td>
+            <td>Cornell in Vietnam Program commences in Ho Chi Minh City; guided tour; meet with TDTU students; welcome &amp; orientation</td>
             <td class="column2">January 3rd</td>
         </tr>
 
         <tr>
-            <td>Dr. Andrew Wyatt lecture; War Remnants Museum; U.S. Consulate Visit; Dinner with TDT students</td>
+            <td>Dr. Andrew Wyatt lecture; War Remnants Museum; U.S. Consulate Visit; dinner with TDTU students</td>
             <td class="column2">January 4th</td>
         </tr>
             
         <tr>
-            <td>Cần Giờ Mangrove Forest; Visit to the Bat Sanctuary &amp; Crocodile Swamp; Hike for a view of the Biosphere</td>
+            <td>Cần Giờ Biosphere Reserve &amp; Mangrove Forest; lecture by Minh Tri; visit to the Bat Sanctuary &amp; crocodile swamp</td>
             <td class="column2">January 5th</td>
         </tr>
             
         <tr>
-            <td>Cu Chi Tunnels; Tay Ninh Cao Dai Temple; Vietnamese Water Puppet Show</td>
+            <td>Visit to the Cu Chi Tunnels &amp; Tay Ninh Cao Dai Temple; Vietnamese Water Puppet Show</td>
             <td class="column2">January 6th</td>
         </tr>
             
         <tr>
-            <td>Bus to Mekong River Delta; 5 Hour Tour of the Mekong River (boat tour, coconut candy making shop,  Mekong Delta-style music concert)</td>
+            <td>Bus to Ben Tre (Mekong River Delta); Mekong River Tour (boat tour, visit a coconut candy making shop,  attend a Mekong Delta-style music concert)</td>
             <td class="column2">January 7th</td>
         </tr>
             
         <tr>
-            <td>Service Learning Component begins; bike to a local farm in the Ben Tre province, spend the day working on a local farm; bonding activities; baking banh tet</td>
+            <td>Meet with the local officials of the Ba Tri District; visit shrimp and rice farms; tea and snacks with local families</td>
             <td class="column2">January 8th</td>
         </tr>
             
         <tr>
-            <td>Meet with the local officials of the Ba Tri commune; tea and snacks with local families</td>
+            <td>Bike to a local farm in the Ben Tre province; harvest vegetables on a local farm; cultural activities at Tran Gia Garden with Mr. Tâm &amp; local people; bake banh tet</td>
             <td class="column2">January 9th</td>
         </tr>
             
         <tr>
-            <td>Attend lecture by Dr. Le Anh Tuan; meet with students at Can Tho University for dinner</td>
+            <td>Travel to Can Tho; welcome lecture by Prof. Nguyen Vo Chau Ngan; lecture by Dr. Le Anh Tuan; meet with students at Can Tho University for dinner</td>
             <td class="column2">January 10th</td>
         </tr>
         
         <tr>
-            <td>Travel by boat to the floating market; pick fruits and catch catfish at Van Xang Orchards; cooked bahn xeo; return to Can Tho University for 2 additional lectures</td>
+            <td>Travel by boat to the Floating Market; visit  Rice Noodle Pizza Factory “Sau Hoai”; pick fruits and catch catfish at Van Xang Orchards; cook bahn xeo; return to Can Tho University for additional lectures</td>
             <td class="column2">January 11th</td>
         </tr>
             
         <tr>
-            <td>Attend lecture at Can Tho University; traveled to a local farm to construct a VACB unit for a local family</td>
+            <td>Attend lecture at Can Tho University; visit Hoa An Biodiversity Centre; travel to a local farm to construct a VACB unit for a local family</td>
             <td class="column2">January 12th</td>
         </tr>
             
         <tr>
-            <td>TBD</td>
+            <td>Visit Bang Lang Stock Sanctuary; visit farming sites of the Mekong Delta Rice Research Insitute; visit Binh Thuy Temple; lecture by Mr. Le Dinh Bich, Ms. Huyen and Band; farewell dinner with CTU faculty and students</td>
             <td class="column2">January 13th</td>
         </tr>
             
         <tr>
-            <td>TBD</td>
+            <td>Fly to Cam Ranh to arrive at Phan Rang; check-in at Long Thuan resort; spend time on the beach and relax</td>
             <td class="column2">January 14th</td>
         </tr>
             
         <tr>
-            <td>TBD</td>
+            <td>Hike at Nui Chua; visit Ca Na salt fields, fish sauce factory, &amp; Bau Truc Ceramic Village</td>
             <td class="column2">January 15th</td>
         </tr>
             
         <tr>
-            <td>TBD</td>
+            <td>Visit Champa Temple and the Nam Cuong Sand Dune; travel back to Ho Chi Min City</td>
             <td class="column2">January 16th</td>
         </tr>
             
         <tr>
-            <td>TBD</td>
+            <td>Meet with TDTU students and shop around in the city; final debriefings and farewell Saigon River Cruise dinner;</td>
             <td class="column2">January 17th</td>
         </tr>
             
         <tr>
-            <td>TBD</td>
+            <td>Departure day; program ends</td>
             <td class="column2">January 18th</td>
         </tr>
             
-        <tr>
-            <td>TBD</td>
-            <td class="column2">January 19th</td>
-        </tr>
-            
-        <tr>
-            <td>TBD</td>
-            <td class="column2">January 20th</td>
-        </tr>
-            
-        <tr>
-            <td>TBD</td>
-            <td class="column2">January 21st</td>
-        </tr>
-            
-        <tr>
-            <td>TBD</td>
-            <td class="column2">January 22nd</td>
-        </tr>
-            
-        <tr>
-            <td>TBD</td>
-            <td class="column2">January 23rd</td>
-        </tr>
-            
-        <tr>
-            <td>TBD</td>
-            <td class="column2">January 24th</td>
-        </tr>
         
         </table>
         
@@ -172,7 +143,11 @@
             <td class="column2">Feb 5-March 23</td>
         </tr>
         </table>
-
+        
+        <div id="backtotop">
+        <a id="topbutton">BACK TO TOP &#9650;</a>
+        </div>
+        
 	</div>
 
 	<div class="footer-bar"><br>© SAIL 2017</div>
