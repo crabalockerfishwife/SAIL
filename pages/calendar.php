@@ -14,37 +14,35 @@
 		<div class="page-heading">Sample Calendar</div>
 
         
-		<div class="page-heading-4"><p>A detailed calendar will be sent upon registration and acceptance into the course. However, provided below is a sample program outline.</p></div>
+		<div class="page-heading-20"><p>A detailed calendar will be sent upon registration and acceptance into the course. However, provided below is a sample program outline.</p></div>
         
-        <table>
-        <tr>
             <h4>Fall Course Components</h4>
-        </tr>
-        <tr>
-            <td>Spring 2017 Early Decision Deadline (rolling admissions in Summer &amp; Fall)</td>
-            <td class="column2">May 15th</td>
-        </tr>
-            
-        <tr>
-            <td>Enroll in VIET 1110 (recommended course: ASIAN 3312)</td>
-            <td class="column2">Aug 16-Sept 6</td>
-        </tr>
+        <table>
+            <tr>
+                <td>Spring 2017 Early Decision Deadline (rolling admissions in Summer &amp; Fall)</td>
+                <td class="column2">May 15th</td>
+            </tr>
 
-        <tr>
-            <td>Pre-enroll in ASIAN 3360</td>
-            <td class="column2">Nov 2-Nov 9</td>
-        </tr>    
-        
-        <tr>
-            <td>Attend ALL Pre-Departure Meetings</td>
-            <td class="column2">Fall 2017</td>
-        </tr>
+            <tr>
+                <td>Enroll in VIET 1110 (recommended course: ASIAN 3312)</td>
+                <td class="column2">Aug 16-Sept 6</td>
+            </tr>
+
+            <tr>
+                <td>Pre-enroll in ASIAN 3360</td>
+                <td class="column2">Nov 2-Nov 9</td>
+            </tr>    
+
+            <tr>
+                <td>Attend ALL Pre-Departure Meetings</td>
+                <td class="column2">Fall 2017</td>
+            </tr>
         </table>
             
-        <table>
-        <tr>
+       
+
             <h4>Winter in Vietnam Travel Itinerary</h4>
-        </tr>
+         <table>
         <tr>
             <td>Early Arrivals in Vietnam; independent exploration of city</td>
             <td class="column2">Dec 29-Jan 2</td>
@@ -133,11 +131,9 @@
         
         </table>
         
-        
-        <table>
-        <tr>
+    
             <h4>Spring Course Components</h4>
-        </tr>
+         <table>
         <tr>
             <td>ASIAN 3360: 7-Week Post-Trip Seminar</td>
             <td class="column2">Feb 5-March 23</td>

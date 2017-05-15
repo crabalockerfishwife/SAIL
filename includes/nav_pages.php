@@ -19,13 +19,10 @@
             </div>
         </div>
       </li>
+
         <li>
         <div class="dropdown">
-          <button class="dropbtn">Faculty &amp; Service Learning</button>
-            <div class="dropdown-content">
-              <a href="../pages/faculty.php">Faculty</a>
-              <a href="../pages/fieldtrips.php">Service Learning Trips</a>
-            </div>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/faculty.php';">Faculty &amp; Partners</button>
         </div>
       </li>
         
@@ -37,13 +34,13 @@
   
       <li>
         <div class="dropdown">
-          <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Housing</button>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Accommodations</button>
         </div>
       </li>
 
-      <li>
+    <li>
         <div class="dropdown">
-          <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Past Participants</button>
+          <button class="dropbtn" type="button" onclick="location.href ='../pages/fieldtrips.php';">Service Learning &amp; Field Trips</button>
         </div>
       </li>
         

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Cornell in Vietnam | Field Trips</title>
@@ -13,9 +13,10 @@
 	?>
 	<div class="page-content">
 		<div class="page-heading">Service Learning and Field Trips</div>
-        <div class="page-heading-4">
+        <div class="page-heading-20">
         <p>A hugely important element of this course is the service learning component. Students will have the opportunity to experience life and the hardships of the Mekong Delta, particularly as a result of drought and climate change. Highlighted below are a few of the field trips that the Winter 2017 course had the opportunity to embark on.</p>
             </div>
+        
         <div class="panelpix">
 			<button class="accordion">Cần Giờ: Observing Bats &amp; Feeding Crocodiles</button>
 			<div class="panel">

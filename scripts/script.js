@@ -2,6 +2,7 @@
     //Dropdowns for items like faculty on the Classes & Faculty Page (it can be hidden to minimize distraction but once
     //clicked, all information is visible, similar to the dropdowns on https://aap.cornell.edu/academics/rome/admissions-and-tuition)
     //Using dropdowns will allow information to be hidden/seen dependent on the user’s preferences.
+    //"topbutton" is the BACK TO TOP button we decided to implement after user testing, clicking on this button brings you to the top of the page (another feature to eliminate unnecessary scrolling and improve user experience)
 
 var acc = document.getElementsByClassName("accordion");
 var i;

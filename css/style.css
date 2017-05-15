@@ -29,11 +29,21 @@ body {
 }
 
 .panelpix img {
-    height: 275px;
-    width: 375px;
+    float: left;
+    margin-top: 18px;
+    margin-left: 50px;
+    height: 200px;
+}
+
+.panelpix p {
+    float: right;
+    width: 60%;
+    margin-right: 50px;
+}
+
+.participant_image {
     margin-left: 400px;
-    padding-top: 20px;
-    padding-bottom: 5px;
+    padding-top: 10px;
 }
 
 
@@ -127,7 +137,7 @@ input {
     opacity: 1;
     height: 60px;
     left: 0px;
-    width: 101%;
+    width: 103%;
     display: block;
     z-index: 2;
 }
@@ -184,6 +194,7 @@ li {
 button {
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 15px;
 }
 
 .dropdown-content {
@@ -260,7 +271,8 @@ button {
 }
 
 #pagecontent_p {
-    width: 90%;
+    width: 100%;
+    margin-left: -40px;
 }
 
 .page-content-1 {
@@ -271,7 +283,7 @@ button {
     top: 35%;
     left: -1%;
     margin-bottom: 5%;
-    width: 99%;
+    width: 101%;
     font-family: sans-serif;
     font-weight: 200;
     text-decoration: none;
@@ -286,8 +298,42 @@ button {
     color: black;
     font-size: 2em;
     padding: 10px;
+    margin-left: 19px;
 }
 
+.page-heading-20 {
+    margin-left: 30px;
+    padding-top: 10px;
+    width: 90%;
+    padding-bottom: 20px;
+}
+
+.page-heading-20 a {
+    color: black;
+    font-weight: 800;
+    font-size: 1.25em;
+    text-decoration: none;
+}
+
+.page-heading-20 a:hover {
+    color: dodgerblue;
+}
+
+.page-heading-21 {
+    margin-left: -10px;
+    font-size: 1.5em;
+
+}
+
+.page-heading-21 a {
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+}
+
+.page-heading-21 a:hover {
+    color: dodgerblue;
+}
 
 .page-heading a {
     color: darkred;
@@ -303,7 +349,7 @@ button {
     color: black;
     font-size: 1.5em;
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .page-heading-2 a {
@@ -336,7 +382,7 @@ button {
     margin-top: 5px;
     font-size: 1em;
     padding: 10px;
-    margin-left: 20px;
+    margin-left: -20px;
 }
 
 .page-heading-4 p {
@@ -391,35 +437,23 @@ th, td, tr {
     text-align: center;
 }
 
-
 .page-heading-9 {
     color: black;
-    margin-top: 5px;
-    font-size: 1em;
-    padding: 5px;
-    margin-left: 20px;
     text-decoration: none;
+    margin-left: 30px;
 }
 
-.page-heading-9 a {
-    text-decoration: none;
-    font-size: 1.5em;
-    color: black;
-    font-weight: 800;
-}
-
-.page-heading-9 a:hover {
-    text-decoration: underline;
-    color:deepskyblue;
-}
-
-.page-heading-9 img {
-    height: 275px;
-    width: 415px;
-    margin-left: 400px;
-    padding-top: 20px;
+.page-heading-17 img {
+    height: 250px;
+    margin-left: 350px;
     padding-bottom: 20px;
 }
+
+.page-heading-17 {
+    width: 90%;
+    margin-left: 60px;
+}
+
 
 
 .page-heading-5 {
@@ -463,6 +497,7 @@ th, td, tr {
 .page-content-2 {
     color: black;
     margin-left: 30px;
+    width: 90%;
 }
 
 button.accordion {
@@ -485,7 +520,7 @@ button.accordion {
 }
 
 button.accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '\02795';  
     font-size: .5em;
     color: #777;
     float: right;
@@ -493,7 +528,7 @@ button.accordion:after {
 }
 
 button.accordion.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\2796"; 
 }
 
 button.accordion.active, button.accordion:hover {
@@ -796,4 +831,30 @@ div.panel {
     font-weight: 800;
     color: darkred;
     text-decoration: none;
+}
+
+.biopix img {
+    margin-top: 39px;
+    float: left;
+    height: 175px;
+    width: 200px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 35px;
+}
+
+.bios {
+    width: 90%;
+}
+
+.bios a {
+    color: black;
+    text-decoration: none;
+    font-weight: 800;
+
+}
+
+.bios a:hover {
+    color: dodgerblue;
+
 }

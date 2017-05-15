@@ -22,18 +22,14 @@
               <a href="../pages/funding.php">Financial Aid</a>
             </div>
         </div>
-      </li>
-    
-      <li>
+        </li>
+        
+    <li>
         <div class="dropdown">
-          <div><img class="nav-image" src="../images/faculty-reg.jpg" alt="Nav-Image" /></div>
-          <button class="dropbtn">Faculty &amp; Service Learning</button>
-            <div class="dropdown-content">
-              <a href="../pages/faculty.php">Faculty</a>
-              <a href="../pages/fieldtrips.php">Service Learning Trips</a>
-            </div>
+            <div><img class="nav-image" src="../images/faculty-reg.jpg" alt="Nav-Image" /></div>
+             <button class="dropbtn" type="button" onclick="location.href ='../pages/faculty.php';">Faculty &amp; Partners</button>
         </div>
-      </li>
+      </li>    
         
     <li>
         <div class="dropdown">
@@ -45,17 +41,16 @@
         <li>
         <div class="dropdown">
             <div><img class="nav-image" src="../images/facilities-reg.jpg" alt="Nav-Image" /></div>
-              <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Housing</button>
+              <button class="dropbtn" type="button" onclick="location.href ='../pages/facilities.php';">Accommodations</button>
         </div>
       </li>
-        
-      <li>
+       
+        <li>
         <div class="dropdown">
             <div><img class="nav-image" src="../images/ruins.jpg" alt="Nav-Image" /></div>
-             <button class="dropbtn" type="button" onclick="location.href ='../pages/opportunities.php';">Past Participants</button>
+             <button class="dropbtn" type="button" onclick="location.href ='../pages/fieldtrips.php';">Service Learning &amp; Field Trips</button>
         </div>
       </li>
-        
     
 
       <li>

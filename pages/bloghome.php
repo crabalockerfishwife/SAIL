@@ -75,11 +75,11 @@ if(isset($_POST['loginsubmit'])) {
 <body>
     <div class="page-content">
         <div class="page-heading">Blog</div>
-        <div class="page-heading-4">
+        <div class="page-heading-20">
             <p>Through the course of a year, students engage in 5 credits of academic learning. Starting from VIET 1110 in the Fall and concluding with ASIAN 3360 in the Spring, students receive amble opportunity to learn and experience Vietnam both in the classroom and in the country itself. <br> These blogs represent the students work before, during, and after their stay in Vietnam.</p>
             <p>We expect the group blog to be prepared and shared every 3-4 days (min of 4 blogs total).  This will be an opportunity to highlight particular experiences (e.g., the war remnant museum, a conversation with a farmer) as well as begin to share the story of climate change and the Mekong Delta, today, and in the future. Given the intense and full schedule while in Vietnam, there is time set aside each day to reflect on experiences and observations and to share these with fellow students and instructors through both conversation and importantly, the group blog.</p>
             <a href="../pages/winter2017.php">Winter 2017: Climate Change and Service Learning in the Mekong Delta, Vietnam</a>
-              </div>
+            </div>
 
   <?php       
     if (isset($_SESSION['logged_user'])){      
@@ -191,7 +191,7 @@ if(isset($_POST['loginsubmit'])) {
                 }
             
             
-            $user_blog="INSERT INTO UserInBlog (User_Id, Blog_Id) VALUES ('$user_id', '$blog_id');";
+            $user_blog="INSERT INTO UserInBlog (User_Id, Blog_Id, UserInBlog_Id) VALUES ('$user_id', '$blog_id', NULL);";
                 if(!isset($_GET['authorname'])){
                     $result = $mysqli->query($user_blog);
                         if($result == FALSE) {
@@ -642,7 +642,13 @@ if(isset($_POST['loginsubmit'])) {
                 $result = $mysqli->query($deleteuser);
                     if($result == FALSE) {
                         echo("Error in deleting user from database.");
-                    }   
+                    } else {
+                        unset($all_users_array[$user_id-1]);
+                        $new_text_data = implode(", ", $all_users_array);
+                        $myfile = fopen("../includes/users.txt", "w");
+                        fwrite($myfile, $new_text_data);
+                        fclose($myfile);
+                    }
 
             }
         } //end delete user
